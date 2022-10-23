@@ -1,0 +1,10 @@
+.MainScreen {
+    width: 50%;
+    background-color: white;
+    align-items: center;
+}
+.MainButton {
+    background-color: green;
+    width: 10%;
+    margin: auto;
+}
