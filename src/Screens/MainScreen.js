@@ -1,31 +1,30 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import Form from 'react-bootstrap/Form';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Row, ProgressBar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function MainScreen(){
     return (
         <div className='MainScreen'>
             <Row>
-                <Col>
-                    <FloatingLabel controlId="floatingInput" label="Current Location">
-                        <Form.Control type="Current Location" placeholder="Current Location" />
-                    </FloatingLabel>
-                </Col>
-                <Col>
-                    <FloatingLabel controlId="floatingInputGrid" label="Destination">
-                        <Form.Control type="Destination" placeholder="Destination" />
-                    </FloatingLabel>
-                </Col>
+                <h1>
+                    Go For It
+                </h1>
             </Row>
-
+            <Row>
+                <ProgressBar striped variant="info" now={0}/>
+            </Row>
+            <br></br>
             <Row>
                 <Col>
-                    <Button variant="outline-secondary" className='MainButton' id="SavedTrips">Saved Trips</Button>{' '}
+                    <Link to="/createtrip">
+                        <Button variant="outline-secondary" className='MainButton' id="CreateTrip">Create Trip</Button>{' '}
+                    </Link>
                 </Col>
                 <Col>
-                    <Button variant="outline-secondary" className='MainButton' id="CreateTrip">Create Trip</Button>{' '}
+                    <Link to="/savedtrips">
+                        <Button variant="outline-secondary" className='MainButton' id="SavedTrips">Saved Trip</Button>{' '}
+                    </Link>
                 </Col>
             </Row>
         </div>
