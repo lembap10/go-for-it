@@ -36,6 +36,11 @@ function CreateTripScreen(){
                         <Button variant="outline-secondary" className='MainButton' id="back">Back</Button>{' '}
                     </Link>
                 </Col>
+                <Col>
+                    <Link  to={"/createtrip/begintrip"}>
+                        <Button variant="outline-secondary" className='MainButton' id="next">Next</Button>{' '}
+                    </Link>
+                </Col>
             </Row>
         </div>
     )
