@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CreateTripScreen from './Screens/CreateTripScreen';
 import SavedTripScreen from './Screens/SavedTripScreen';
 import BeginTripScreen from './Screens/BeginTripScreen';
+import ViewTripScreen from './Screens/ViewTripScreen';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/createtrip" element={<CreateTripScreen />} />
             <Route path="/savedtrips" element={<SavedTripScreen />} />
             <Route path="/createtrip/begintrip" element={<BeginTripScreen />} />
+            <Route path={"/viewtrip"} element={<ViewTripScreen/>} />
           </Routes>
       </main>
       <Footer />
