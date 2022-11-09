@@ -13,7 +13,7 @@ function ActivitiesScreen(){
                     <h1 align="center">What do you want to do there?</h1>
                     <Row>
                         <ToggleButtonGroup type="checkbox">
-                            <ToggleButton value={"Attractions"}>Attractions</ToggleButton>
+                            <ToggleButton id="Attractions" value={"Attractions"}>Attractions</ToggleButton>
                             <ToggleButton value={"Shopping"}>Shopping</ToggleButton>
                             <ToggleButton value={"Outdoors"}>Outdoors</ToggleButton>
                         </ToggleButtonGroup>
