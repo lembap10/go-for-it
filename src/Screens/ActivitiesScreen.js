@@ -2,10 +2,7 @@ import React from 'react';
 import Sidebar from '../Components/Sidebar';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Button, ButtonToolbar } from 'react-bootstrap';
-import ToggleButton from 'react-bootstrap/ToggleButton';
-import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
-import "../styles.css"
+import { Button, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 
 function ActivitiesScreen(){
     return (
@@ -14,13 +11,24 @@ function ActivitiesScreen(){
                 <Col xs={4} md="auto"><Sidebar /></Col>
                 <Col>
                     <Row>
-                        <ButtonToolbar>
-                            <ToggleButtonGroup type="checkbox" defaultValue={[1, 3]}>
-                                <ToggleButton value={1}>Checkbox 1 (pre-checked)</ToggleButton>
-                                <ToggleButton value={2}>Checkbox 2</ToggleButton>
-                                <ToggleButton value={3}>Checkbox 3 (pre-checked)</ToggleButton>
-                            </ToggleButtonGroup>
-                        </ButtonToolbar>
+                        <ToggleButtonGroup type="checkbox">
+                            <ToggleButton value={"Attractions"}>Attractions</ToggleButton>
+                            <ToggleButton value={"Shopping"}>Shopping</ToggleButton>
+                            <ToggleButton value={"Outdoors"}>Outdoors</ToggleButton>
+                        </ToggleButtonGroup>
+                        <br></br>
+                        <ToggleButtonGroup type="checkbox">
+                            <ToggleButton value={"Cuisine"}>Cuisine</ToggleButton>
+                            <ToggleButton value={"History"}>History</ToggleButton>
+                            <ToggleButton value={"Arts"}>Arts</ToggleButton>
+                        </ToggleButtonGroup>
+                        <br></br>
+                        <ToggleButtonGroup type="checkbox">
+                            <ToggleButton value={"Theatre"}>Theatre</ToggleButton>
+                            <ToggleButton value={"Culture"}>Culture</ToggleButton>
+                            <ToggleButton value={"Wine"}>Wine</ToggleButton>
+                        </ToggleButtonGroup>
+                        <br></br>
                     </Row>
                     <Row>
                         <Link to="/createtrip/vibes">
