@@ -22,7 +22,7 @@ function App() {
           <Route path='/createtrip' element={<CreateTripScreen />} />
           <Route path='/savedtrips' element={<SavedTripScreen />} />
           <Route path='/createtrip/begintrip' element={<BeginTripScreen />} />
-          <Route path="/createtrip/begintrip/date" element={<DateScreen />} />
+          <Route path="/createtrip/date" element={<DateScreen />} />
           <Route path='/createtrip/travelers' element={<TravelersScreen />} />
           <Route path='/createtrip/budget' element={<BudgetScreen />} />
           <Route path={'/viewtrip'} element={<ViewTripScreen />} />
