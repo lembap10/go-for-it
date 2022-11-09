@@ -10,6 +10,7 @@ function ActivitiesScreen(){
             <Row>
                 <Col xs={4} md="auto"><Sidebar /></Col>
                 <Col>
+                    <h1 align="center">What do you want to do there?</h1>
                     <Row>
                         <ToggleButtonGroup type="checkbox">
                             <ToggleButton value={"Attractions"}>Attractions</ToggleButton>
