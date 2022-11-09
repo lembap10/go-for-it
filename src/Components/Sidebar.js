@@ -10,7 +10,7 @@ import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
-    <div style={{ display: 'flex', height: '80vh', overflow: 'scroll initial', flexDirection: 'column' }}>
+    <div style={{ display: 'flex', height: '80vh', overflow: 'scroll initial', margin: 0 }}>
       <CDBSidebar textColor="#fff" backgroundColor="#333">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
           <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
@@ -24,10 +24,10 @@ const Sidebar = () => {
               <CDBSidebarMenuItem icon="calendar">Dates</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/tables" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Travelers</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="user">Travelers</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/profile" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="user">Budget</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="dollar">Budget</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/analytics" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="chart-line">Activities</CDBSidebarMenuItem>
@@ -36,7 +36,7 @@ const Sidebar = () => {
               <CDBSidebarMenuItem icon="chart-line">Vibe</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/analytics" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="chart-line">Invite</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="share">Invite</CDBSidebarMenuItem>
             </NavLink>
           </CDBSidebarMenu>
         </CDBSidebarContent>

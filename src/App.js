@@ -15,14 +15,12 @@ function App() {
     <Router>
       <Header />
       <main className="py-3">
-        <Container>
           <Routes>
             <Route path="/" element={<MainScreen />} exact />
             <Route path="/createtrip" element={<CreateTripScreen />} />
             <Route path="/savedtrips" element={<SavedTripScreen />} />
             <Route path="/createtrip/begintrip" element={<BeginTripScreen />} />
           </Routes>
-        </Container>
       </main>
       <Footer />
     </Router>
