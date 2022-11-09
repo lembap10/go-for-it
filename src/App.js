@@ -7,6 +7,7 @@ import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CreateTripScreen from './Screens/CreateTripScreen';
 import SavedTripScreen from './Screens/SavedTripScreen';
+import BeginTripScreen from './Screens/BeginTripScreen';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<MainScreen />} exact />
             <Route path="/createtrip" element={<CreateTripScreen />} />
             <Route path="/savedtrips" element={<SavedTripScreen />} />
+            <Route path="/createtrip/begintrip" element={<BeginTripScreen />} />
           </Routes>
         </Container>
       </main>
