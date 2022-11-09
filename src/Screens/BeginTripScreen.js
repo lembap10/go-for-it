@@ -1,3 +1,5 @@
+//Remember to change link back to /
+
 import React from 'react';
 import Sidebar from '../Components/Sidebar';
 import { Col, Row } from 'react-bootstrap';
