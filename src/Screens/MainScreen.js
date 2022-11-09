@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Col, Row, Container } from 'react-bootstrap';
+import { Col, Row, Container, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import tripImg from '../Images/trip-planning.png';
 
 function MainScreen(){
     return (
@@ -23,6 +24,9 @@ function MainScreen(){
                         <Link to="/savedtrips">
                             <Button variant="outline-secondary" className='MainButton' id="SavedTrips">Saved Trip</Button>{' '}
                         </Link>
+                    </Col>
+                    <Col>
+                        <Image src={tripImg} alt="trip planning" fluid />
                     </Col>
                 </Row>
             </div>
