@@ -8,6 +8,7 @@ import CreateTripScreen from './Screens/CreateTripScreen';
 import SavedTripScreen from './Screens/SavedTripScreen';
 import BeginTripScreen from './Screens/BeginTripScreen';
 import ActivitiesScreen from './Screens/ActivitiesScreen';
+import VibesScreen from './Screens/VibesScreen';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/savedtrips" element={<SavedTripScreen />} />
           <Route path="/createtrip/begintrip" element={<BeginTripScreen />} />
           <Route path="/createtrip/activities" element={<ActivitiesScreen />} />
+          <Route path="/createtrip/vibes" element={<VibesScreen />} />
         </Routes>
       </main>
       <Footer />
