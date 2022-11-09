@@ -1,5 +1,3 @@
-//Remember to change link back to /
-
 import React from 'react';
 import Sidebar from '../Components/Sidebar';
 import { Col, Row } from 'react-bootstrap';
@@ -18,7 +16,7 @@ function BeginTripScreen(){
                         <h4>Share your preferences and let us plan your next getaway!</h4>
                     </Row>
                     <Row>
-                        <Link to="/createtrip/activities">
+                        <Link to="/">
                             <Button variant="outline-secondary" className='MainButton' id="Dates">Next</Button>{' '}
                         </Link>
                     </Row>
