@@ -16,9 +16,11 @@ function BeginTripScreen(){
                         <h4>Share your preferences and let us plan your next getaway!</h4>
                     </Row>
                     <Row>
-                        <Link to="/">
-                            <Button variant="outline-secondary" className='MainButton' id="Dates">Next</Button>{' '}
-                        </Link>
+                        <Col>
+                            <Link to="/createtrip/begintrip/date">
+                                <Button variant="outline-secondary" className='MainButton' id="Dates">Next</Button>{' '}
+                            </Link>
+                        </Col>
                     </Row>
                 </Col>
             </Row>   
