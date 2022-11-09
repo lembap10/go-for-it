@@ -9,6 +9,7 @@ import SavedTripScreen from './Screens/SavedTripScreen';
 import BeginTripScreen from './Screens/BeginTripScreen';
 import ViewTripScreen from './Screens/ViewTripScreen';
 import InviteScreen from './Screens/InviteScreen';
+import CostSharingScreen from './Screens/CostSharing';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/createtrip/begintrip" element={<BeginTripScreen/>} />
             <Route path={"/viewtrip"} element={<ViewTripScreen/>} />
             <Route path={"/createtrip/invite"} element={<InviteScreen/>} />
+            <Route path={"/createtrip/costsharing"} element={<CostSharingScreen/>} />
           </Routes>
       </main>
       <Footer />

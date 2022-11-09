@@ -5,15 +5,15 @@ import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import {useLocation} from 'react-router-dom';
 import Dropdown from '../Components/Dropdown.js'
-import './../InviteScreen.css'
+//import './../CostSharingScreen.css'
 import {getTrips} from '../trips/trips.js'
 
 
 
-function InviteScreen(){
+function CostSharingScreen(){
     return (
         <Container>
-            <div className='InviteScreen'>
+            <div className='CostSharingScreen'>
             <Row>
                     <h1>
                         Go For It
@@ -26,17 +26,17 @@ function InviteScreen(){
                 </Row>
                 <Row>
                     <Col>
-                        <FloatingLabel controlId="floatingInput" label="Email">
+                        <FloatingLabel controlId="floatingInput" label="Gas">
                             <Form.Control type="Email Invite" placeholder="example@gmail.com" />
                         </FloatingLabel>
                     </Col>
                     <Col>
-                        <FloatingLabel controlId="floatingInput" label="Email">
+                        <FloatingLabel controlId="floatingInput" label="Groceries">
                             <Form.Control type="Email Invite" placeholder="example@gmail.com" />
                         </FloatingLabel>
                     </Col>
                     <Col>
-                        <FloatingLabel controlId="floatingInput" label="Email">
+                        <FloatingLabel controlId="floatingInput" label="Lodging">
                             <Form.Control type="Email Invite" placeholder="example@gmail.com" />
                         </FloatingLabel>
                     </Col>
@@ -46,11 +46,11 @@ function InviteScreen(){
             <Link to="/">
                 <Button variant="outline-secondary"> Back to Home </Button>
             </Link>
-            <Link to={"/createtrip/costsharing"}>
+            <Link to="/">
                 <Button variant="outline-secondary"> Next </Button>
             </Link>
         </Container>
     )
 }
 
-export default InviteScreen;
+export default CostSharingScreen;
