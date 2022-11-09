@@ -11,26 +11,31 @@ function ActivitiesScreen(){
                 <Col xs={4} md="auto"><Sidebar /></Col>
                 <Col>
                     <h1 align="center">What do you want to do there?</h1>
+                    <br />
                     <Row>
-                        <ToggleButtonGroup type="checkbox">
-                            <ToggleButton id="Attractions" value={"Attractions"}>Attractions</ToggleButton>
-                            <ToggleButton value={"Shopping"}>Shopping</ToggleButton>
-                            <ToggleButton value={"Outdoors"}>Outdoors</ToggleButton>
+                        <ToggleButtonGroup type="checkbox" className="mb-2">
+                            <ToggleButton variant = "outline-primary" id="Attractions" value={"Attractions"}>Attractions</ToggleButton>
+                            <ToggleButton variant = "outline-primary" id="Shopping" value={"Shopping"}>Shopping</ToggleButton>
+                            <ToggleButton variant = "outline-primary" id = "Outdoors" value={"Outdoors"}>Outdoors</ToggleButton>
                         </ToggleButtonGroup>
-                        <br></br>
-                        <ToggleButtonGroup type="checkbox">
-                            <ToggleButton value={"Cuisine"}>Cuisine</ToggleButton>
-                            <ToggleButton value={"History"}>History</ToggleButton>
-                            <ToggleButton value={"Arts"}>Arts</ToggleButton>
+
+                        <br/>
+                        
+                        <ToggleButtonGroup type="checkbox" className="mb-2">
+                            <ToggleButton variant = "outline-primary" id="Cuisine" value={"Cuisine"}>Cuisine</ToggleButton>
+                            <ToggleButton variant = "outline-primary" id="History" value={"History"}>History</ToggleButton>
+                            <ToggleButton variant = "outline-primary" id="Arts" value={"Arts"}>Arts</ToggleButton>
                         </ToggleButtonGroup>
-                        <br></br>
-                        <ToggleButtonGroup type="checkbox">
-                            <ToggleButton value={"Theatre"}>Theatre</ToggleButton>
-                            <ToggleButton value={"Culture"}>Culture</ToggleButton>
-                            <ToggleButton value={"Wine"}>Wine</ToggleButton>
+
+                        <br />
+
+                        <ToggleButtonGroup type="checkbox" className="mb-2">
+                            <ToggleButton variant = "outline-primary" id="Theatre" value={"Theatre"}>Theatre</ToggleButton>
+                            <ToggleButton variant = "outline-primary" id="Culture" value={"Culture"}>Culture</ToggleButton>
+                            <ToggleButton variant = "outline-primary" id="Wine" value={"Wine"}>Wine</ToggleButton>
                         </ToggleButtonGroup>
-                        <br></br>
                     </Row>
+                    <br />
                     <Row>
                         <Link to="/createtrip/vibes">
                             <Button variant="outline-secondary" className='MainButton' id="Vibes">Next</Button>{' '}
