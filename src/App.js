@@ -10,7 +10,6 @@ import BeginTripScreen from './Screens/BeginTripScreen';
 import TravelersScreen from './Screens/TravelersScreen';
 import BudgetScreen from './Screens/BudgetScreen';
 import ViewTripScreen from './Screens/ViewTripScreen';
-
 import InviteScreen from './Screens/InviteScreen';
 import CostSharingScreen from './Screens/CostSharing';
 import DateScreen from './Screens/DateScreen';
