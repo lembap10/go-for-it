@@ -9,12 +9,29 @@ import {getTrips} from '../trips/trips.js'
 
 
 function ViewTripScreen(){
-
     const location = useLocation();
     const props = location.state;
+    console.log(props)
+    let name = props.name;
     let trips = getTrips();
-    let days = trips.Duluth.days;
+    let trip = "";
+    for (let i = 0; i < trips.length; i++){
+        console.log ("!!!!", trips[i]);
+        if (trips[i].name === name){
+            trip = trips[i];
+            console.log(trip);
+        }
+    }
+    console.log(trip);
+    let days = trip.days;
     console.log(days);
+
+    let line = <hr  style={{
+        color: '#000000',
+        backgroundColor: '#000000',
+        height: .5,
+        borderColor : '#000000'
+    }}/>
 
     return (
         <Container>
@@ -27,7 +44,31 @@ function ViewTripScreen(){
                 
                 <div className='tripInfo'>
                     <div className='tripOverview'>
-
+                        <div className="costOverview">
+                            <p>Cost</p>
+                            <p>${trip.cost}</p>
+                        </div>
+                        {line}
+                        <div className="attendeesOverview">
+                            <p>Attendees</p>
+                            {trip.attendees.map( att => {
+                                return (<span classname="attendee">{att}</span>)
+                            })}
+                        </div>
+                        {line}
+                        <div className="datesOverview">
+                            <p>Dates</p>
+                            <span className='dates'>
+                                {trip.dates[0]} - {trip.dates[1]}
+                            </span>
+                        </div>
+                        {line}
+                        <div className="activityOverview">
+                            <p>Activity Types</p>
+                            {trip.activityTypes.map( act => {
+                                return (<span classname="attendee">{act}</span>)
+                            })}
+                        </div>
                     </div>
                     <div className="dailyBreakdowns">
                         {days.map(day => {
@@ -38,7 +79,7 @@ function ViewTripScreen(){
 
                     </div>
                     <div className="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1426252.345103502!2d-93.68737600437473!3d45.718075727670964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x52b32d69f70ac7ff%3A0xe31217a152df9978!2sUniversity%20of%20Minnesota%2C%20Minneapolis%2C%20MN!3m2!1d44.97399!2d-93.2277285!4m5!1s0x52ae527e782e37ff%3A0x90fdbf76eb580c72!2sDuluth%2C%20MN!3m2!1d46.786671899999995!2d-92.1004852!5e0!3m2!1sen!2sus!4v1667681458593!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style={{border:0}} title="map"></iframe>
+                        <iframe src={trip.src} width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style={{border:0}} title="map"></iframe>
                     </div>
                 </div>
             </div>

@@ -18,7 +18,6 @@ function DropdownClick(activities, name){
   let status = false;
   for (let i = 0; i < statuses.length; i++){
     if (statuses[i][0] === name){
-      console.log("found");
       status = statuses[i][1];
       statuses[i][1] = !statuses[i][1];
     }
@@ -29,6 +28,7 @@ function DropdownClick(activities, name){
     for (let i = 0 ; i < activities.length; i++){
       let node = document.createElement("span");
       node.innerHTML = `${activities[i]}<br>`
+      node.className = "dropper"
       drops.appendChild(node);
     }
   }
