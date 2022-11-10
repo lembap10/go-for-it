@@ -31,7 +31,7 @@ function VibesScreen(){
                     
                     <Row>
                         <Link to="/createtrip/invite">
-                            <Button variant="outline-secondary" className='MainButton' id="Vibes">Next</Button>{' '}
+                            <Button variant="outline-secondary" className='MainButton' id="to_invite">Next</Button>{' '}
                         </Link>
                     </Row>
                 </Col>

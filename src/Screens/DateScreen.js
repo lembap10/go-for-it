@@ -22,7 +22,7 @@ const DateScreen = () => {
                 <Row>
                     <Col>
                         <Link to="/createtrip/travelers">
-                            <Button variant="outline-secondary" className='MainButton' id="Dates">Next</Button>{' '}
+                            <Button variant="outline-secondary" className='MainButton' id="to_travelers">Next</Button>{' '}
                         </Link>
                     </Col>
                 </Row>
