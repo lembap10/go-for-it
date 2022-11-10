@@ -59,11 +59,11 @@ export default function Budget() {
             />
           </Box>
           <Row>
-            <Link to='/'>
+            <Link to='/createtrip/activities'>
               <Button
                 variant='outline-secondary'
                 className='MainButton'
-                id='Dates'
+                id='to_activities'
               >
                 Next
               </Button>{' '}
