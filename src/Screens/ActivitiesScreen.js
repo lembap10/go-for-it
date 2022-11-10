@@ -38,7 +38,7 @@ function ActivitiesScreen(){
                     
                     <Row>
                         <Link to="/createtrip/vibes">
-                            <Button variant="outline-secondary" className='MainButton' id="Vibes">Next</Button>{' '}
+                            <Button variant="outline-secondary" className='MainButton' id="to_vibes">Next</Button>{' '}
                         </Link>
                     </Row>
                 </Col>
