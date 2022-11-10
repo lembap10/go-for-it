@@ -30,8 +30,8 @@ function App() {
           <Route path="/createtrip/date" element={<DateScreen />} />
           <Route path='/createtrip/travelers' element={<TravelersScreen />} />
           <Route path='/createtrip/budget' element={<BudgetScreen />} />
-          <Route path ='createtrip/activities' element = {<ActivitiesScreen />} />
-          <Route path ='createtrip/vibes' element = {<VibesScreen />} />
+          <Route path ='/createtrip/activities' element = {<ActivitiesScreen />} />
+          <Route path ='/createtrip/vibes' element = {<VibesScreen />} />
           <Route path={'/viewtrip'} element={<ViewTripScreen />} />
           <Route path={"/createtrip/invite"} element={<InviteScreen/>} />
           <Route path={"/createtrip/costsharing"} element={<CostSharingScreen/>} />
