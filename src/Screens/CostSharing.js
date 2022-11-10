@@ -3,27 +3,24 @@ import { Col, Row, Button, Container, Card } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import {useLocation} from 'react-router-dom';
-import Dropdown from '../Components/Dropdown.js'
-//import './../CostSharingScreen.css'
-import {getTrips} from '../trips/trips.js'
-
-
+import Sidebar from "../Components/Sidebar";
 
 function CostSharingScreen(){
     return (
-        <Container>
             <div className='CostSharingScreen'>
             <Row>
-                    <h1>
-                        Go For It
-                    </h1>
-                </Row>
+                <Col xs={4} md="auto"><Sidebar /></Col>
+
+                <Col>
+                <h1>
+                    Go For It
+                </h1>
                 <Row>
-                    <s1>
-                      Send your invitation to your fellow adventurers!  
-                    </s1>
+                <h4>
+                    Send your invitation to your fellow adventurers!  
+                </h4>
                 </Row>
+
                 <Row>
                     <Col>
                         <FloatingLabel controlId="floatingInput" label="Gas">
@@ -41,15 +38,19 @@ function CostSharingScreen(){
                         </FloatingLabel>
                     </Col>
                 </Row>
-                <br></br>
+
+                <Link to="/">
+                    <Button variant="outline-secondary"> Back to Home </Button>
+                </Link>
+                <Link to="/">
+                    <Button variant="outline-secondary"> Next </Button>
+                </Link>
+                
+                </Col>
+                    
+                </Row>
+                
             </div>
-            <Link to="/">
-                <Button variant="outline-secondary"> Back to Home </Button>
-            </Link>
-            <Link to="/">
-                <Button variant="outline-secondary"> Next </Button>
-            </Link>
-        </Container>
     )
 }
 
