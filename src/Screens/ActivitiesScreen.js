@@ -37,9 +37,17 @@ function ActivitiesScreen(){
                     <br />
                     
                     <Row>
-                        <Link to="/createtrip/vibes">
-                            <Button variant="outline-secondary" className='MainButton' id="to_vibes">Next</Button>{' '}
-                        </Link>
+                        <Col>
+                            <Link to="/createtrip/budget">
+                                <Button variant="outline-secondary" className='MainButton' id="back_budget">Back</Button>{' '}
+                            </Link>
+                        </Col>
+                        <Col>
+                            <Link to="/createtrip/vibes">
+                                <Button variant="outline-secondary" className='MainButton' id="to_vibes">Next</Button>{' '}
+                            </Link>
+                        </Col>
+                        
                     </Row>
                 </Col>
             </Row>   

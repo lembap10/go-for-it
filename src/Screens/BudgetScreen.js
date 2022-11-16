@@ -59,15 +59,22 @@ export default function Budget() {
             />
           </Box>
           <Row>
-            <Link to='/createtrip/activities'>
-              <Button
-                variant='outline-secondary'
-                className='MainButton'
-                id='to_activities'
-              >
-                Next
-              </Button>{' '}
-            </Link>
+            <Col>
+              <Link to="/createtrip/travelers">
+                  <Button variant="outline-secondary" className='MainButton' id="back_travelers">Back</Button>{' '}
+              </Link>
+            </Col>
+            <Col>
+              <Link to='/createtrip/activities'>
+                <Button
+                  variant='outline-secondary'
+                  className='MainButton'
+                  id='to_activities'
+                >
+                  Next
+                </Button>{' '}
+              </Link>
+            </Col>
           </Row>
         </Col>
       </Row>

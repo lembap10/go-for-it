@@ -111,15 +111,23 @@ export default function Travelers() {
             -{' '}
           </Button>{' '}
           <Row>
-            <Link to='/createtrip/budget'>
-              <Button
-                variant='outline-secondary'
-                className='MainButton'
-                id='to_budget'
-              >
-                Next
-              </Button>{' '}
-            </Link>
+            <Col>
+              <Link to="/createtrip/date">
+                  <Button variant="outline-secondary" className='MainButton' id="back_dates">Back</Button>{' '}
+              </Link>
+            </Col>
+            <Col>
+              <Link to='/createtrip/budget'>
+                <Button
+                  variant='outline-secondary'
+                  className='MainButton'
+                  id='to_budget'
+                >
+                  Next
+                </Button>{' '}
+              </Link>
+            </Col>
+            
           </Row>
         </Col>
       </Row>

@@ -30,9 +30,16 @@ function VibesScreen(){
                     <br />
                     
                     <Row>
-                        <Link to="/createtrip/invite">
-                            <Button variant="outline-secondary" className='MainButton' id="to_invite">Next</Button>{' '}
-                        </Link>
+                        <Col>
+                            <Link to="/createtrip/activities">
+                                <Button variant="outline-secondary" className='MainButton' id="back_activities">Back</Button>{' '}
+                            </Link>
+                        </Col>
+                        <Col>
+                            <Link to="/createtrip/invite">
+                                <Button variant="outline-secondary" className='MainButton' id="to_invite">Next</Button>{' '}
+                            </Link>
+                        </Col>
                     </Row>
                 </Col>
             </Row>   

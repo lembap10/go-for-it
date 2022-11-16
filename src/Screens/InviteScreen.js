@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row, Button, Container} from 'react-bootstrap';
+import { Col, Row, Button} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
@@ -39,9 +39,17 @@ function InviteScreen(){
                         </FloatingLabel>
                     </Col>
                     <Row>
-                        <Link to={"/createtrip/costsharing"}>
-                            <Button variant="outline-secondary"> Next </Button>
-                        </Link>
+                        <Col>
+                            <Link to="/createtrip/vibes">
+                                <Button variant="outline-secondary" className='MainButton' id="back_vibes">Back</Button>{' '}
+                            </Link>
+                        </Col>
+                        <Col>
+                            <Link to={"/createtrip/costsharing"}>
+                                <Button variant="outline-secondary"> Next </Button>
+                            </Link>
+                        </Col>
+                        
                     </Row>
                     
                     

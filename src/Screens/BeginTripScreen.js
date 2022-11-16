@@ -17,6 +17,11 @@ function BeginTripScreen(){
                     </Row>
                     <Row>
                         <Col>
+                            <Link to="/createtrip">
+                                <Button variant="outline-secondary" className='MainButton' id="back_create">Back</Button>{' '}
+                            </Link>
+                        </Col>
+                        <Col>
                             <Link to="/createtrip/date">
                                 <Button variant="outline-secondary" className='MainButton' id="to_dates">Next</Button>{' '}
                             </Link>
