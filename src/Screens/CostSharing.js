@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row, Button, Container, Card } from 'react-bootstrap';
+import { Col, Row, Button, Container, Card} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
@@ -13,34 +13,87 @@ function CostSharingScreen(){
 
                 <Col>
                 <h1>
-                    Go For It
+                    GoForIt
                 </h1>
                 <Row>
                 <h4>
-                    Send your invitation to your fellow adventurers!  
+                    Break up trip cost here
                 </h4>
                 </Row>
-
+                <h9>
+                    Enter the cost for each category and select who should pay.
+                </h9>
                 <Row>
+                    
                     <Col>
-                        <FloatingLabel controlId="floatingInput" label="Gas">
-                            <Form.Control type="Email Invite" placeholder="example@gmail.com" />
+                        <FloatingLabel controlId="floatingInput" label="Gas ($)">
+                            <Form.Control type="Email Invite" placeholder="$" />
                         </FloatingLabel>
-                    </Col>
-                    <Col>
-                        <FloatingLabel controlId="floatingInput" label="Groceries">
-                            <Form.Control type="Email Invite" placeholder="example@gmail.com" />
-                        </FloatingLabel>
-                    </Col>
-                    <Col>
-                        <FloatingLabel controlId="floatingInput" label="Lodging">
-                            <Form.Control type="Email Invite" placeholder="example@gmail.com" />
-                        </FloatingLabel>
-                    </Col>
-                </Row>
 
-                <Link to="/">
-                    <Button variant="outline-secondary"> Back to Home </Button>
+                        <FloatingLabel controlId="floatingInput" label="Groceries ($)">
+                            <Form.Control type="Email Invite" placeholder="$" />
+                        </FloatingLabel>
+
+                        <FloatingLabel controlId="floatingInput" label="Lodging ($)">
+                            <Form.Control type="Email Invite" placeholder="$" />
+                        </FloatingLabel>
+                    </Col>
+
+                    <Col>
+                        <Row>
+                        <li>
+                            <label for="checkid">
+                                <input id="checkid"  type="checkbox" value="test" />Person1
+                            </label>
+                        </li>
+                        </Row>
+                        <Row>
+                        <li>
+                            <label for="checkid">
+                                <input id="checkid"  type="checkbox" value="test" />Person2
+                            </label>
+                        </li>
+
+                        </Row>
+
+                        <Row>
+                        <li>
+                            <label for="checkid">
+                                <input id="checkid"  type="checkbox" value="test" />Person1
+                            </label>
+                        </li>
+                        </Row>
+                        <Row>
+                        <li>
+                            <label for="checkid">
+                                <input id="checkid"  type="checkbox" value="test" />Person2
+                            </label>
+                        </li>
+
+                        </Row>
+                        <Row>
+                        <li>
+                            <label for="checkid">
+                                <input id="checkid"  type="checkbox" value="test" />Person1
+                            </label>
+                        </li>
+                        </Row>
+                        <Row>
+                        <li>
+                            <label for="checkid">
+                                <input id="checkid"  type="checkbox" value="test" />Person2
+                            </label>
+                        </li>
+
+                        </Row>
+                    </Col>
+
+                </Row>
+                <Row>
+
+                </Row>
+                <Link to="/createtrip/invite">
+                    <Button variant="outline-secondary"> Back </Button>
                 </Link>
                 <Link to="/">
                     <Button variant="outline-secondary"> Next </Button>
