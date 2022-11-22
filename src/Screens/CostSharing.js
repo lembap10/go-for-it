@@ -24,80 +24,90 @@ function CostSharingScreen(){
                     Enter the cost for each category and select who should pay.
                 </h9>
                 <Row>
-                    
-                    <Col>
-                        <FloatingLabel controlId="floatingInput" label="Gas ($)">
-                            <Form.Control type="Email Invite" placeholder="$" />
-                        </FloatingLabel>
-
-                        <FloatingLabel controlId="floatingInput" label="Groceries ($)">
-                            <Form.Control type="Email Invite" placeholder="$" />
-                        </FloatingLabel>
-
-                        <FloatingLabel controlId="floatingInput" label="Lodging ($)">
-                            <Form.Control type="Email Invite" placeholder="$" />
-                        </FloatingLabel>
-                    </Col>
-
-                    <Col>
                         <Row>
-                        <li>
-                            <label for="checkid">
-                                <input id="checkid"  type="checkbox" value="test" />Person1
-                            </label>
-                        </li>
+                            <Col>
+                                <FloatingLabel controlId="floatingInput" label="Gas ($)">
+                                    <Form.Control type="Email Invite" placeholder="$" />
+                                </FloatingLabel>
+                            </Col>
+                            <Col>
+                                <Row>
+                                    <li>
+                                        <label for="checkid">
+                                            <input id="checkidGas1"  type="checkbox" value="test" />Person1
+                                        </label>
+                                    </li>
+                                </Row>
+                                <Row>
+                                    <li>
+                                        <label for="checkid">
+                                            <input id="checkidGas2"  type="checkbox" value="test" />Person2
+                                        </label>
+                                    </li>
+                                </Row>
+                            </Col>
                         </Row>
+                        <Row><br></br></Row>
                         <Row>
-                        <li>
-                            <label for="checkid">
-                                <input id="checkid"  type="checkbox" value="test" />Person2
-                            </label>
-                        </li>
-
+                            <Col>
+                                <FloatingLabel controlId="floatingInput" label="Groceries ($)">
+                                    <Form.Control type="Email Invite" placeholder="$" />
+                                </FloatingLabel>
+                            </Col>
+                            <Col>
+                                <Row>
+                                    <li>
+                                        <label for="checkid">
+                                            <input id="checkidGroceries1"  type="checkbox" value="test" />Person1
+                                        </label>
+                                    </li>
+                                </Row>
+                                <Row>
+                                    <li>
+                                        <label for="checkid">
+                                            <input id="checkidGroceries2"  type="checkbox" value="test" />Person2
+                                        </label>
+                                    </li>
+                                </Row>
+                            </Col>
                         </Row>
-
+                        <Row><br></br></Row>
                         <Row>
-                        <li>
-                            <label for="checkid">
-                                <input id="checkid"  type="checkbox" value="test" />Person1
-                            </label>
-                        </li>
+                            <Col>
+                                <FloatingLabel controlId="floatingInput" label="Lodging ($)">
+                                    <Form.Control type="Email Invite" placeholder="$" />
+                                </FloatingLabel>
+                            </Col>
+                            <Col>
+                                <Row>
+                                    <li>
+                                        <label for="checkid">
+                                            <input id="checkidLodging1"  type="checkbox" value="test" />Person1
+                                        </label>
+                                    </li>
+                                </Row>
+                                <Row>
+                                    <li>
+                                        <label for="checkid">
+                                            <input id="checkidLodging2"  type="checkbox" value="test" />Person2
+                                        </label>
+                                    </li>
+                                </Row>
+                            </Col>
                         </Row>
-                        <Row>
-                        <li>
-                            <label for="checkid">
-                                <input id="checkid"  type="checkbox" value="test" />Person2
-                            </label>
-                        </li>
-
-                        </Row>
-                        <Row>
-                        <li>
-                            <label for="checkid">
-                                <input id="checkid"  type="checkbox" value="test" />Person1
-                            </label>
-                        </li>
-                        </Row>
-                        <Row>
-                        <li>
-                            <label for="checkid">
-                                <input id="checkid"  type="checkbox" value="test" />Person2
-                            </label>
-                        </li>
-
-                        </Row>
-                    </Col>
-
                 </Row>
                 <Row>
-
+                    <Col>
+                        <Link to="/createtrip/invite">
+                            <Button variant="outline-secondary"> Back </Button>
+                        </Link>
+                    </Col>
+                    <Col>
+                        <Link to="/">
+                            <Button variant="outline-secondary"> Next </Button>
+                        </Link>
+                    </Col>
                 </Row>
-                <Link to="/createtrip/invite">
-                    <Button variant="outline-secondary"> Back </Button>
-                </Link>
-                <Link to="/">
-                    <Button variant="outline-secondary"> Next </Button>
-                </Link>
                 
                 </Col>
                     
