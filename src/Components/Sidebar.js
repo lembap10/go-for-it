@@ -24,16 +24,16 @@ const Sidebar = () => {
               <CDBSidebarMenuItem icon="calendar">Dates</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/createtrip/travelers" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="user">Travelers</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="plus">Travelers</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/createtrip/budget" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="dollar">Budget</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="dollar-sign">Budget</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/createtrip/activities" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="chart-line">Activities</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="mountain">Activities</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/createtrip/vibes" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="chart-line">Vibe</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="star">Vibe</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/createtrip/invite" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="share">Invite</CDBSidebarMenuItem>
