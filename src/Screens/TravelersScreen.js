@@ -58,30 +58,21 @@ export default function Travelers() {
             variant='outline-secondary'
             className='MainButton'
             id='incrementCount'
-            onClick={incrementCount1}
-          >
-            {' '}
-            +{' '}
-          </Button>{' '}
-          <Button
-            variant='outline-secondary'
-            className='MainButton'
-            id='incrementCount'
             onClick={decrementCount1}
           >
             {' '}
             -{' '}
           </Button>{' '}
-          <h1>Children: {count2}</h1>
           <Button
             variant='outline-secondary'
             className='MainButton'
             id='incrementCount'
-            onClick={incrementCount2}
+            onClick={incrementCount1}
           >
             {' '}
             +{' '}
           </Button>{' '}
+          <h1>Children: {count2}</h1>
           <Button
             variant='outline-secondary'
             className='MainButton'
@@ -91,16 +82,16 @@ export default function Travelers() {
             {' '}
             -{' '}
           </Button>{' '}
-          <h1>Pets: {count3}</h1>
           <Button
             variant='outline-secondary'
             className='MainButton'
             id='incrementCount'
-            onClick={incrementCount3}
+            onClick={incrementCount2}
           >
             {' '}
             +{' '}
           </Button>{' '}
+          <h1>Pets: {count3}</h1>
           <Button
             variant='outline-secondary'
             className='MainButton'
@@ -109,6 +100,15 @@ export default function Travelers() {
           >
             {' '}
             -{' '}
+          </Button>{' '}
+          <Button
+            variant='outline-secondary'
+            className='MainButton'
+            id='incrementCount'
+            onClick={incrementCount3}
+          >
+            {' '}
+            +{' '}
           </Button>{' '}
           <Row>
             <Col>
