@@ -13,8 +13,9 @@ import ViewTripScreen from './Screens/ViewTripScreen';
 import InviteScreen from './Screens/InviteScreen';
 import CostSharingScreen from './Screens/CostSharing';
 import DateScreen from './Screens/DateScreen';
-import ActivitiesScreen from './Screens/ActivitiesScreen'
-import VibesScreen from './Screens/VibesScreen'
+import ActivitiesScreen from './Screens/ActivitiesScreen';
+import VibesScreen from './Screens/VibesScreen';
+import EditScreen from './Screens/EditScreen';
 
 function App() {
   return (
@@ -27,14 +28,18 @@ function App() {
           <Route path='/createtrip' element={<CreateTripScreen />} />
           <Route path='/savedtrips' element={<SavedTripScreen />} />
           <Route path='/createtrip/begintrip' element={<BeginTripScreen />} />
-          <Route path="/createtrip/date" element={<DateScreen />} />
+          <Route path='/createtrip/date' element={<DateScreen />} />
           <Route path='/createtrip/travelers' element={<TravelersScreen />} />
           <Route path='/createtrip/budget' element={<BudgetScreen />} />
-          <Route path ='/createtrip/activities' element = {<ActivitiesScreen />} />
-          <Route path ='/createtrip/vibes' element = {<VibesScreen />} />
+          <Route path='/createtrip/activities' element={<ActivitiesScreen />} />
+          <Route path='/createtrip/vibes' element={<VibesScreen />} />
           <Route path={'/viewtrip'} element={<ViewTripScreen />} />
-          <Route path={"/createtrip/invite"} element={<InviteScreen/>} />
-          <Route path={"/createtrip/costsharing"} element={<CostSharingScreen/>} />
+          <Route path={'/createtrip/invite'} element={<InviteScreen />} />
+          <Route
+            path={'/createtrip/costsharing'}
+            element={<CostSharingScreen />}
+          />
+          <Route path={'/createtrip/edit'} element={<EditScreen />} />
         </Routes>
       </main>
       <Footer />
