@@ -12,7 +12,7 @@ function ActivitiesScreen(){
     };
 
     const handleSend = () => {
-        setActivityTypes(activities);
+        setActivityTypes(Object.values(activities));
     };
     return (
         <div className="MainScreen">
