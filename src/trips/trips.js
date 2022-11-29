@@ -1,3 +1,5 @@
+import { act } from "@testing-library/react";
+
 let trips = [
   {
     name: 'Duluth Trip',
@@ -144,9 +146,9 @@ function addBudget(budget) {
  * @param {*} activities list of strings representing the type of activities
  */
 function setActivityTypes(activities) {
-  for (let i = 0; i < activities.length; i++) {
-    trips[trips.length - 1].activityTypes += activities[i];
-  }
+  console.log(activities)
+  for (let i in activities)
+    trips[trips.length - 1].activityTypes.push(activities[i])
 }
 
 /**

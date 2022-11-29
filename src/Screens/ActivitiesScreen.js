@@ -12,6 +12,7 @@ function ActivitiesScreen(){
     };
 
     const handleSend = () => {
+        console.log(Object.values(activities))
         setActivityTypes(Object.values(activities));
     };
     return (

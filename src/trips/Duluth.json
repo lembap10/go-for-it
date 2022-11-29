@@ -1,0 +1,20 @@
+{
+    "name":"Duluth Trip",
+    "from":"University of Minnesota",
+    "to":"Duluth",
+    "numdays" : "3",
+    "activities": [
+        {
+            "act1": "visit",
+            "act2": "visit2"
+        },
+        {
+            "act1": "visit3",
+            "act2": "visit4"
+        },
+        {
+            "act1": "visit5",
+            "act2": "visit6"
+        }
+    ]
+}

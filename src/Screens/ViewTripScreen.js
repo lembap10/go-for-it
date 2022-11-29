@@ -9,6 +9,7 @@ import {getTrips} from '../trips/trips.js'
 
 
 function ViewTripScreen(){
+    console.log(getTrips())
     const location = useLocation();
     const props = location.state;
     console.log(props)
