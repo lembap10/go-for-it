@@ -1,11 +1,23 @@
 import React from 'react';
 import { Col, Row, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { addEmails } from '../trips/trips.js';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Sidebar from '../Components/Sidebar';
 
 function InviteScreen() {
+  const [emails, setEmails] = React.useState(() => []);
+
+  const handleEmails = (newEmails) => {
+    setEmails(newEmails);
+};
+
+  const handleSend = () => {
+    console.log(Object.values(emails))
+    addEmails(Object.values(emails));
+};
+
   return (
     <div className='InviteScreen'>
       <Row>
@@ -21,7 +33,7 @@ function InviteScreen() {
 
           <Row>
             <Col>
-              <FloatingLabel controlId='floatingInput' label='Email'>
+              <FloatingLabel controlId='floatingInput' label='Email' onChange={handleEmails}>
                 <Form.Control
                   type='Email Invite'
                   placeholder='example@gmail.com'
@@ -29,7 +41,7 @@ function InviteScreen() {
               </FloatingLabel>
             </Col>
             <Col>
-              <FloatingLabel controlId='floatingInput' label='Email'>
+              <FloatingLabel controlId='floatingInput' label='Email' onChange={handleEmails}>
                 <Form.Control
                   type='Email Invite'
                   placeholder='example@gmail.com'
@@ -37,7 +49,7 @@ function InviteScreen() {
               </FloatingLabel>
             </Col>
             <Col>
-              <FloatingLabel controlId='floatingInput' label='Email'>
+              <FloatingLabel controlId='floatingInput' label='Email' onChange={handleEmails}>
                 <Form.Control
                   type='Email Invite'
                   placeholder='example@gmail.com'
@@ -58,7 +70,7 @@ function InviteScreen() {
               </Col>
               <Col>
                 <Link to={'/createtrip/costsharing'}>
-                  <Button variant='outline-secondary'> Next </Button>
+                  <Button variant='outline-secondary' className="toEdit" onClick={handleSend} > Next </Button>
                 </Link>
               </Col>
             </Row>

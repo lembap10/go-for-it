@@ -20,10 +20,14 @@ function CostSharingScreen(){
                     Break up trip cost here
                 </h4>
                 </Row>
-                <h9>
+                <h6>
                     Enter the cost for each category and select who should pay.
-                </h9>
+                </h6>
+
                 <Row>
+                <h9>
+                    Each participant will be emailed their share of the budget at the end.
+                </h9>
                         <Row>
                             <Col>
                                 <FloatingLabel controlId="floatingInput" label="Gas ($)">

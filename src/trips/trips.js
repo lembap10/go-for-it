@@ -185,7 +185,10 @@ function getTripNames() {
 function getMap(index = trips.length - 1) {
   return trips[index].src
 }
-
+/**
+ *
+ * @param {*} emails list of strings representing the emails
+ */
 function addEmails(emails, index = trips.length - 1) {
   for (let i in emails) {
     trips[index].emails.push(emails[i])
@@ -216,6 +219,8 @@ export {
   setActivityTypes,
   addBudget,
   addDates,
+  addEmails,
+  getEmails,
   addAttendees,
   createNewTrip,
   changeCurScreen,
