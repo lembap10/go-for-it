@@ -20,128 +20,130 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import ListSubheader from '@mui/material/ListSubheader';
 import IconButton from '@mui/material/IconButton';
 import Icon from '@mui/material/Icon';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 
-class Card extends React.Component {
-  render() {
-    return <div className='card'>{this.props.children}</div>;
-  }
-}
+// class Card extends React.Component {
+//   render() {
+//     return <div className='card'>{this.props.children}</div>;
+//   }
+// }
 
-class SelectableCard extends React.Component {
-  render() {
-    var isSelected = this.props.selected ? 'selected' : '';
-    var className = 'selectable ' + isSelected;
-    return (
-      <Card>
-        <div className={className} onClick={this.props.onClick}>
-          {this.props.children}
-          <div className='check'>
-            <span className='checkmark'>✔</span>
-          </div>
-        </div>
-      </Card>
-    );
-  }
-}
+// class SelectableCard extends React.Component {
+//   render() {
+//     var isSelected = this.props.selected ? 'selected' : '';
+//     var className = 'selectable ' + isSelected;
+//     return (
+//       <Card>
+//         <div className={className} onClick={this.props.onClick}>
+//           {this.props.children}
+//           <div className='check'>
+//             <span className='checkmark'>✔</span>
+//           </div>
+//         </div>
+//       </Card>
+//     );
+//   }
+// }
 
-class SelectableTitleCard extends React.Component {
-  render() {
-    var { title, description, selected } = this.props;
-    return (
-      <SelectableCard onClick={this.props.onClick} selected={selected}>
-        <div className='content'>
-          <h1 className='title'>{title}</h1>
-          <p className='description'>{description}</p>
-        </div>
-      </SelectableCard>
-    );
-  }
-}
+// class SelectableTitleCard extends React.Component {
+//   render() {
+//     var { title, description, selected } = this.props;
+//     return (
+//       <SelectableCard onClick={this.props.onClick} selected={selected}>
+//         <div className='content'>
+//           <h1 className='title'>{title}</h1>
+//           <p className='description'>{description}</p>
+//         </div>
+//       </SelectableCard>
+//     );
+//   }
+// }
 
-class SelectableCardList extends React.Component {
-  constructor(props) {
-    super(props);
-    var selected = props.multiple ? [] : -1;
-    var initialState = {
-      selected: selected,
-    };
-    this.state = initialState;
-  }
+// class SelectableCardList extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     var selected = props.multiple ? [] : -1;
+//     var initialState = {
+//       selected: selected,
+//     };
+//     this.state = initialState;
+//   }
 
-  onItemSelected(index) {
-    this.setState((prevState, props) => {
-      if (props.multiple) {
-        var selectedIndexes = prevState.selected;
-        var selectedIndex = selectedIndexes.indexOf(index);
-        if (selectedIndex > -1) {
-          selectedIndexes.splice(selectedIndex, 1);
-          props.onChange(selectedIndexes);
-        } else {
-          if (!(selectedIndexes.length >= props.maxSelectable)) {
-            selectedIndexes.push(index);
-            props.onChange(selectedIndexes);
-          }
-        }
-        return {
-          selected: selectedIndexes,
-        };
-      } else {
-        props.onChange(index);
-        return {
-          selected: index,
-        };
-      }
-    });
-  }
+//   onItemSelected(index) {
+//     this.setState((prevState, props) => {
+//       if (props.multiple) {
+//         var selectedIndexes = prevState.selected;
+//         var selectedIndex = selectedIndexes.indexOf(index);
+//         if (selectedIndex > -1) {
+//           selectedIndexes.splice(selectedIndex, 1);
+//           props.onChange(selectedIndexes);
+//         } else {
+//           if (!(selectedIndexes.length >= props.maxSelectable)) {
+//             selectedIndexes.push(index);
+//             props.onChange(selectedIndexes);
+//           }
+//         }
+//         return {
+//           selected: selectedIndexes,
+//         };
+//       } else {
+//         props.onChange(index);
+//         return {
+//           selected: index,
+//         };
+//       }
+//     });
+//   }
 
-  render() {
-    var { contents, multiple } = this.props;
+//   render() {
+//     var { contents, multiple } = this.props;
 
-    var content = contents.map((cardContent, i) => {
-      var { title, description, selected } = cardContent;
-      var selected = multiple
-        ? this.state.selected.indexOf(i) > -1
-        : this.state.selected == i;
-      return (
-        <SelectableTitleCard
-          key={i}
-          title={title}
-          description={description}
-          selected={selected}
-          onClick={(e) => this.onItemSelected(i)}
-        />
-      );
-    });
-    return <div className='cardlist'>{content}</div>;
-  }
-}
+//     var content = contents.map((cardContent, i) => {
+//       var { title, description, selected } = cardContent;
+//       var selected = multiple
+//         ? this.state.selected.indexOf(i) > -1
+//         : this.state.selected == i;
+//       return (
+//         <SelectableTitleCard
+//           key={i}
+//           title={title}
+//           description={description}
+//           selected={selected}
+//           onClick={(e) => this.onItemSelected(i)}
+//         />
+//       );
+//     });
+//     return <div className='cardlist'>{content}</div>;
+//   }
+// }
 
-class Example extends React.Component {
-  onListChanged(selected) {
-    this.setState({
-      selected: selected,
-    });
-  }
-  submit() {
-    window.alert('Selected: ' + this.state.selected);
-  }
-  render() {
-    return (
-      <div className='column'>
-        <h1 className='title'>{this.props.title}</h1>
-        <SelectableCardList
-          multiple={this.props.multiple}
-          maxSelectable={this.props.maxSelectable}
-          contents={this.props.cardContents}
-          onChange={this.onListChanged.bind(this)}
-        />
-        <button className='card' onClick={(e) => this.submit()}>
-          Get selected
-        </button>
-      </div>
-    );
-  }
-}
+// class Example extends React.Component {
+//   onListChanged(selected) {
+//     this.setState({
+//       selected: selected,
+//     });
+//   }
+//   submit() {
+//     window.alert('Selected: ' + this.state.selected);
+//   }
+//   render() {
+//     return (
+//       <div className='column'>
+//         <h1 className='title'>{this.props.title}</h1>
+//         <SelectableCardList
+//           multiple={this.props.multiple}
+//           maxSelectable={this.props.maxSelectable}
+//           contents={this.props.cardContents}
+//           onChange={this.onListChanged.bind(this)}
+//         />
+//         <button className='card' onClick={(e) => this.submit()}>
+//           Get selected
+//         </button>
+//       </div>
+//     );
+//   }
+// }
 
 var teams = [
   {
@@ -229,9 +231,9 @@ function EditScreen() {
   const trips = getTrips();
   const [tabvalue, setTabValue] = React.useState(0);
 
-  // const handleTabChange = (event, newValue) => {
-  //   setTabValue(newValue);
-  // };
+  const handleTabChange = (event, newValue) => {
+    setTabValue(newValue);
+  };
 
   const [hourvalue, setHourValue] = React.useState(2);
 
@@ -336,34 +338,123 @@ function EditScreen() {
                     maxSelectable={3}
                   />
                 </div> */}
-                <ImageList sx={{ width: 500, height: 450 }}>
-                  <ImageListItem key='Subheader' cols={2}>
-                    <ListSubheader component='div'>November 26 - 28</ListSubheader>
-                  </ImageListItem>
-                  {itemData.map((item) => (
-                    <ImageListItem key={item.img}>
-                      <img
-                        src={`${item.img}?w=248&fit=crop&auto=format`}
-                        srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                        alt={item.title}
-                        loading='lazy'
-                      />
-                      <ImageListItemBar
-                        title={item.title}
-                        subtitle={item.author}
-                        actionIcon={
-                          <IconButton
-                            sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                            aria-label={`info about ${item.title}`}
-                          >
-                            <Icon>add_circle</Icon>
-                          </IconButton>
-                        }
-                      />
-                    </ImageListItem>
-                  ))}
-                </ImageList>
 
+                <Box
+                  sx={{
+                    maxWidth: { xs: 320, sm: 480 },
+                    bgcolor: 'background.paper',
+                  }}
+                >
+                  <Tabs
+                    value={tabvalue}
+                    onChange={handleTabChange}
+                    variant='scrollable'
+                    scrollButtons='auto'
+                    aria-label='scrollable auto tabs example'
+                  >
+                    <Tab label='November 26' />
+                    <Tab label='Novermber 27' />
+                    <Tab label='Novermber 28' />
+                  </Tabs>{' '}
+                  <TabPanel value={tabvalue} index={0}>
+                    {/* 1. Lost Creek Adventures<br></br>
+                    Rafting/KayakingPaddleboardingVacation RentalsCornucopia
+                    Open until 6:00 PM “a reservation online. On their website
+                    it says if your 12 years old and 100lbs you are able to do
+                    the half” more */}
+                    <ImageList sx={{ width: 500, height: 450 }}>
+                      <ImageListItem key='Subheader' cols={2}>
+                        <ListSubheader component='div'>
+                          Activities
+                        </ListSubheader>
+                      </ImageListItem>
+                      {itemData.map((item) => (
+                        <ImageListItem key={item.img}>
+                          <img
+                            src={`${item.img}?w=248&fit=crop&auto=format`}
+                            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                            alt={item.title}
+                            loading='lazy'
+                          />
+                          <ImageListItemBar
+                            title={item.title}
+                            subtitle={item.author}
+                            actionIcon={
+                              <IconButton
+                                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                                aria-label={`info about ${item.title}`}
+                              >
+                                <Icon>add_circle</Icon>
+                              </IconButton>
+                            }
+                          />
+                        </ImageListItem>
+                      ))}
+                    </ImageList>
+                  </TabPanel>
+                  <TabPanel value={tabvalue} index={1}>
+                    <ImageList sx={{ width: 500, height: 450 }}>
+                      <ImageListItem key='Subheader' cols={2}>
+                        <ListSubheader component='div'>
+                          Activities
+                        </ListSubheader>
+                      </ImageListItem>
+                      {itemData2.map((item) => (
+                        <ImageListItem key={item.img}>
+                          <img
+                            src={`${item.img}?w=248&fit=crop&auto=format`}
+                            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                            alt={item.title}
+                            loading='lazy'
+                          />
+                          <ImageListItemBar
+                            title={item.title}
+                            subtitle={item.author}
+                            actionIcon={
+                              <IconButton
+                                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                                aria-label={`info about ${item.title}`}
+                              >
+                                <Icon>add_circle</Icon>
+                              </IconButton>
+                            }
+                          />
+                        </ImageListItem>
+                      ))}
+                    </ImageList>
+                  </TabPanel>
+                  <TabPanel value={tabvalue} index={2}>
+                    <ImageList sx={{ width: 500, height: 450 }}>
+                      <ImageListItem key='Subheader' cols={2}>
+                        <ListSubheader component='div'>
+                          Activities
+                        </ListSubheader>
+                      </ImageListItem>
+                      {itemData3.map((item) => (
+                        <ImageListItem key={item.img}>
+                          <img
+                            src={`${item.img}?w=248&fit=crop&auto=format`}
+                            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                            alt={item.title}
+                            loading='lazy'
+                          />
+                          <ImageListItemBar
+                            title={item.title}
+                            subtitle={item.author}
+                            actionIcon={
+                              <IconButton
+                                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                                aria-label={`info about ${item.title}`}
+                              >
+                                <Icon>add_circle</Icon>
+                              </IconButton>
+                            }
+                          />
+                        </ImageListItem>
+                      ))}
+                    </ImageList>
+                  </TabPanel>
+                </Box>
                 {/* <Box
                   sx={{
                     flexGrow: 2,
@@ -474,73 +565,153 @@ export default EditScreen;
 const itemData = [
   {
     img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
-    author: '@bkristastucchio',
+    title: 'ZXC Breakfast',
+    author: 'Rest Stop',
     rows: 2,
     cols: 2,
     featured: true,
   },
   {
     img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Burger',
-    author: '@rollelflex_graphy726',
+    title: 'BCD Burger',
+    author: 'Rest Stop',
   },
   {
     img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
-    author: '@helloimnik',
+    title: 'ECF Camera Shop',
+    author: 'Attractions',
   },
   {
     img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'Coffee',
-    author: '@nolanissac',
+    title: 'ABC Coffee',
+    author: 'Rest Stop',
     cols: 2,
   },
   {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
-    author: '@hjrc33',
+    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
+    title: 'Basketball Museum',
+    author: 'Attractions',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
+    title: 'Bike Trail',
+    author: 'Attractions',
     cols: 2,
   },
   {
     img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey',
-    author: '@arwinneil',
+    title: 'Honey Farm',
+    author: 'Rest Stop',
+  },
+];
+
+const itemData2 = [
+  {
+    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
+    title: 'Hats Shop',
+    author: 'Attractions',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
+    title: 'Honey Shop',
+    author: 'Attractions',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
+    title: 'Basketball Park',
+    author: 'Attractions',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+    title: 'ZXC Breakfast',
+    author: 'Rest Stop',
     rows: 2,
     cols: 2,
     featured: true,
   },
   {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
-    author: '@tjdragotta',
+    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+    title: 'BCD Burger',
+    author: 'Rest Stop',
   },
   {
-    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
-    author: '@katie_wasserman',
+    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+    title: 'ECF Camera Shop',
+    author: 'Attractions',
   },
   {
-    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-    author: '@silverdalex',
-    rows: 2,
+    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+    title: 'ABC Coffee',
+    author: 'Rest Stop',
     cols: 2,
   },
   {
-    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-    author: '@shelleypauls',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-    author: '@peterlaster',
+    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
+    title: 'Basketball Museum',
+    author: 'Attractions',
   },
   {
     img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-    author: '@southside_customs',
+    title: 'Bike Trail',
+    author: 'Attractions',
+    cols: 2,
+  },
+];
+
+const itemData3 = [
+  {
+    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
+    title: 'Fern Park',
+    author: 'Attractions',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
+    title: 'Mushrooms Shop',
+    author: 'Attractions',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
+    title: 'Tomato basil Farm',
+    author: 'Rest Stop',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
+    title: 'Sea star Beach',
+    author: 'Attractions',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+    title: 'ZXC Breakfast',
+    author: 'Rest Stop',
+    rows: 2,
+    cols: 2,
+    featured: true,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+    title: 'BCD Burger',
+    author: 'Rest Stop',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+    title: 'ECF Camera Shop',
+    author: 'Attractions',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+    title: 'ABC Coffee',
+    author: 'Rest Stop',
+    cols: 2,
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
+    title: 'Basketball Museum',
+    author: 'Attractions',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
+    title: 'Bike Trail',
+    author: 'Attractions',
     cols: 2,
   },
 ];
