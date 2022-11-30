@@ -4,7 +4,8 @@ import FloatingLabel from "react-bootstrap/FloatingLabel"
 import Form from "react-bootstrap/Form"
 import { Col, Row, Container } from "react-bootstrap"
 import { Link } from "react-router-dom"
-import { createNewTrip, getTrips } from "../trips/trips.js"
+import { createNewTrip, getTrips, changeCurScreen, getCurScreen } from "../trips/trips.js"
+
 
 function CreateTripScreen() {
   const clickHandler = () => {
@@ -12,6 +13,8 @@ function CreateTripScreen() {
     let to = document.getElementById("to").value
     let name = document.getElementById("tripName").value
     createNewTrip(name, to, from)
+    let trips = getTrips()
+    changeCurScreen((trips.length - 1)/15)
     console.log(getTrips())
   }
 

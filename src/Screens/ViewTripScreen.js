@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import {useLocation} from 'react-router-dom';
 import Dropdown from '../Components/Dropdown.js'
 import './../ViewTripScreen.css'
-import {getTrips} from '../trips/trips.js'
-import {changeCurScreen} from "../App"
+import {getTrips, getCurScreen, changeCurScreen} from '../trips/trips.js'
 
 
 
@@ -91,7 +90,7 @@ function ViewTripScreen(){
                 <Button variant="outline-secondary"> Back to Home </Button>
             </Link>
             <Link to="/createtrip/date">
-                <Button variant="outline-secondary" onclick="changeCurScreen(index)"> Edit this Trip </Button>
+                <Button variant="outline-secondary" onClick="changeCurScreen(index)"> Edit this Trip </Button>
             </Link>
         </Container>
     )
