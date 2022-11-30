@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Sidebar from "../Components/Sidebar";
+import { getEmails } from '../trips/trips.js';
 
 function CostSharingScreen(){
     return (
@@ -38,14 +39,14 @@ function CostSharingScreen(){
                                 <Row>
                                     <li>
                                         <label for="checkid">
-                                            <input id="checkidGas1"  type="checkbox" value="test" />Person1
+                                            <input id="checkidGas1"  type="checkbox" value="test"/> {getEmails[0]}
                                         </label>
                                     </li>
                                 </Row>
                                 <Row>
                                     <li>
                                         <label for="checkid">
-                                            <input id="checkidGas2"  type="checkbox" value="test" />Person2
+                                            <input id="checkidGas2"  type="checkbox" value="test" /> {getEmails[1]}
                                         </label>
                                     </li>
                                 </Row>
@@ -62,14 +63,14 @@ function CostSharingScreen(){
                                 <Row>
                                     <li>
                                         <label for="checkid">
-                                            <input id="checkidGroceries1"  type="checkbox" value="test" />Person1
+                                            <input id="checkidGroceries1"  type="checkbox" value="test" />{getEmails[0]}
                                         </label>
                                     </li>
                                 </Row>
                                 <Row>
                                     <li>
                                         <label for="checkid">
-                                            <input id="checkidGroceries2"  type="checkbox" value="test" />Person2
+                                            <input id="checkidGroceries2"  type="checkbox" value="test" />{getEmails[1]}
                                         </label>
                                     </li>
                                 </Row>
@@ -86,14 +87,14 @@ function CostSharingScreen(){
                                 <Row>
                                     <li>
                                         <label for="checkid">
-                                            <input id="checkidLodging1"  type="checkbox" value="test" />Person1
+                                            <input id="checkidLodging1"  type="checkbox" value="test" />{getEmails[0]}
                                         </label>
                                     </li>
                                 </Row>
                                 <Row>
                                     <li>
                                         <label for="checkid">
-                                            <input id="checkidLodging2"  type="checkbox" value="test" />Person2
+                                            <input id="checkidLodging2"  type="checkbox" value="test" />{getEmails[1]}
                                         </label>
                                     </li>
                                 </Row>
