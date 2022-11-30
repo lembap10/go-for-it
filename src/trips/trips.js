@@ -11,6 +11,7 @@ let trips = [
     cost: 350,
     attendees: ['3 adults', '1 children'],
     dates: ['November 25th', 'November 27th'],
+    emails: ['email1@gmai.com', 'email2@gmail.com'],
     activityTypes: ['Hiking', 'Nature'],
     days: [
       {
@@ -37,6 +38,7 @@ let trips = [
     cost: 350,
     attendees: ['5 adults', '1 dog'],
     dates: ['November 25th', 'November 27th'],
+    emails: ['email1@gmai.com', 'email2@gmail.com'],
     activityTypes: ['Hiking', 'Nature'],
     days: [
       {
@@ -100,7 +102,7 @@ function addAttendees(numAdults, numKids, numDogs) {
  * @param {*} endMonth int of endMonth
  * @param {*} endDay int of ending day
  */
-function addDates(startMonth, startDay, endMonth, endDay) {
+function addDates(startMonth, startDay, endMonth, endDay, index = trips.length - 1) {
   let months = [
     '',
     'January',
@@ -116,12 +118,12 @@ function addDates(startMonth, startDay, endMonth, endDay) {
     'November',
     'December',
   ];
-  trips[trips.length - 1].dates = [
+  trips[index].dates = [
     `${months[startMonth]} ${startDay}th`,
     `${months[endMonth]} ${endDay}th`,
   ];
   while (startMonth != endMonth || startDay != endDay) {
-    trips[trips.length - 1].dates += {
+    trips[index].dates += {
       day: `${months[startMonth]} ${startDay}th`,
       activities: ['hard-code act 1', 'hard-code act 2'],
     };
@@ -137,18 +139,18 @@ function addDates(startMonth, startDay, endMonth, endDay) {
  *
  * @param {*} budget number representing the budget set
  */
-function addBudget(budget) {
-  trips[trips.length - 1].budget = budget;
+function addBudget(budget, index = trips.length - 1) {
+  trips[index].budget = budget;
 }
 
 /**
  *
  * @param {*} activities list of strings representing the type of activities
  */
-function setActivityTypes(activities) {
+function setActivityTypes(activities, index = trips.length - 1) {
   console.log(activities)
   for (let i in activities)
-    trips[trips.length - 1].activityTypes.push(activities[i])
+    trips[index].activityTypes.push(activities[i])
 }
 
 /**
@@ -172,13 +174,23 @@ function getDays(index = trips.length - 1) {
 function getTripNames() {
   let names = [];
   for (let i = 0; i < trips.length; i++) {
-    names += trips[i].name;
+    names.push(trips[i].name)
   }
   return names;
 }
 
 function getMap(index = trips.length - 1) {
   return trips[index].src;
+}
+
+function addEmails(emails, index = trips.length - 1){
+  for (let i in emails){
+    trips[index].emails.push(emails[i]);
+  }
+}
+
+function getEmails(index = trips.length - 1){
+  return trips[index].emails;
 }
 
 export {

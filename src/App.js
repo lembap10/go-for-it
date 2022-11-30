@@ -17,6 +17,16 @@ import ActivitiesScreen from './Screens/ActivitiesScreen';
 import VibesScreen from './Screens/VibesScreen';
 import EditScreen from './Screens/EditScreen';
 
+let curScreen = 1;
+
+function changeCurScreen(x){
+  curScreen = x;
+}
+
+function getCurScreen(){
+  return curScreen;
+}
+
 function App() {
   return (
     <Router>
