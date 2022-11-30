@@ -3,8 +3,8 @@ import Sidebar from "../Components/Sidebar"
 import { Col, Row, Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import { DateRangePicker } from "rsuite"
-import { getCurScreen } from "../trips/trips"
 import "rsuite/dist/rsuite.min.css"
+import { addDates } from "../trips/trips.js"
 
 const DateScreen = () => {
   const clickHandler = () => {
@@ -15,16 +15,8 @@ const DateScreen = () => {
     let fromDay = from.substring(8, 10)
     let toMonth = to.substring(5, 7)
     let toDay = to.substring(8, 10)
-    console.log(date)
-    console.log(from)
-    console.log(fromMonth)
-    console.log(fromDay)
-    console.log(to)
-    console.log(toMonth)
-    console.log(toDay)
+    addDates(fromMonth, fromDay, toMonth, toDay)
   }
-
-  console.log(getCurScreen())
   return (
     <div>
       <Row>

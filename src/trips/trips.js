@@ -196,16 +196,15 @@ function getEmails(index = trips.length - 1) {
   return trips[index].emails
 }
 
-let curScreen = 1;
+let curScreen = 1
 
-function changeCurScreen(x){
-  curScreen = x;
-  console.log('cur screen to', x)
-} 
+function changeCurScreen(x) {
+  curScreen = x
+  console.log("cur screen to", x)
+}
 
-
-function getCurScreen(){
-  return curScreen;
+function getCurScreen() {
+  return curScreen
 }
 
 export {
@@ -220,5 +219,5 @@ export {
   addAttendees,
   createNewTrip,
   changeCurScreen,
-  getCurScreen
+  getCurScreen,
 }
