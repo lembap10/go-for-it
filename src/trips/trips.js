@@ -210,6 +210,14 @@ function getCurScreen() {
   return curScreen
 }
 
+function getCurTrip(name){
+  for(var i = 0; i < trips.length; i++){
+    if (trips[i].name === name){
+      return trips[i];
+    }
+  }
+}
+
 export {
   getTrips,
   getMap,
@@ -225,4 +233,5 @@ export {
   createNewTrip,
   changeCurScreen,
   getCurScreen,
+  getCurTrip,
 }

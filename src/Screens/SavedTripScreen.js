@@ -1,9 +1,19 @@
 import React from 'react';
 import { Col, Row, Button, Container, Card } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import { getTripNames, getTrips, getCurTrip } from "../trips/trips"
 
 
 function SavedTripScreen(){
+    var names = getTripNames();
+    console.log(names);
+    function getFromTo(name){
+        let trip = getCurTrip(name);
+        let from = trip.from;
+        let to = trip.to;
+        return `Trip from ${from} to ${to}`;
+    };
+    console.log(getTrips());
     return (
         <Container>
             <div className='MainScreen'>
@@ -13,31 +23,19 @@ function SavedTripScreen(){
                     </h1>
                 </Row>
                 <br></br>
-                <Row>
-                    <Col>
+                <Row md={2}>
+                    {names.map((name) => (
                         <Card className='my-3 p-3 rounded'>
                             <Card.Body>
-                                <Link to="/viewtrip" state={{name: "Duluth Trip", fileName:"Duluth.json"}}>
-                                    <Card.Title>Duluth Trip</Card.Title>
+                                <Link to="/viewtrip" state={{name: name}}>
+                                    <Card.Title>{name}</Card.Title>
                                 </Link>
                                 <Card.Text as='div'>
-                                    Trip from Minneapolis to Duluth
+                                    {getFromTo(name)}
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                    </Col>
-                    <Col>
-                        <Card className='my-3 p-3 rounded'>
-                            <Card.Body>
-                                <Link to="/viewtrip" state={{name: "Wisconsin Trip", fileName:"Wisconsin.json"}}>
-                                    <Card.Title>Wisconsin Trip</Card.Title>
-                                </Link>
-                                <Card.Text as='div'>
-                                    Trip from Minneapolis to Wisconsin
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
+                    ))}
                 </Row>
                 <Row>
                     <Col>
