@@ -43,10 +43,8 @@ export default function Travelers() {
   }
 
   const clickHandler = () => {
-    console.log(typeof count1)
-    console.log(typeof count2)
-    console.log(typeof count3)
-    addAttendees(2, 2, 2)
+    console.log(getTrips())
+    addAttendees(count1, count2, count3)
     console.log(getTrips())
   }
 
