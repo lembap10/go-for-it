@@ -5,6 +5,7 @@ import {useLocation} from 'react-router-dom';
 import Dropdown from '../Components/Dropdown.js'
 import './../ViewTripScreen.css'
 import {getTrips} from '../trips/trips.js'
+import {changeCurScreen} from "../App"
 
 
 
@@ -16,9 +17,11 @@ function ViewTripScreen(){
     let name = props.name;
     let trips = getTrips();
     let trip = "";
+    let index = 0;
     for (let i = 0; i < trips.length; i++){
         console.log ("!!!!", trips[i]);
         if (trips[i].name === name){
+            index = i
             trip = trips[i];
             console.log(trip);
         }
@@ -86,6 +89,9 @@ function ViewTripScreen(){
             </div>
             <Link to="/">
                 <Button variant="outline-secondary"> Back to Home </Button>
+            </Link>
+            <Link to="/createtrip/date">
+                <Button variant="outline-secondary" onclick="changeCurScreen(index)"> Edit this Trip </Button>
             </Link>
         </Container>
     )
