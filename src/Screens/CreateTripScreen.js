@@ -14,7 +14,7 @@ function CreateTripScreen() {
     let name = document.getElementById("tripName").value
     createNewTrip(name, to, from)
     let trips = getTrips()
-    changeCurScreen((trips.length - 1)/15)
+    changeCurScreen((trips.length - 1))
     console.log(getTrips())
   }
 

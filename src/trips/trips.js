@@ -66,10 +66,10 @@ function getTrips() {
  * @param {*} from string of the place trip ends
  */
 function createNewTrip(tripName, to, from) {
-  trips += {
+  trips.push({
     name: tripName,
-    from: to,
-    to: from,
+    from: from,
+    to: to,
     src: "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d25048818.82215488!2d-124.9829943932154!3d39.97007639566578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x52b32d69f70ac7ff%3A0xe31217a152df9978!2sUniversity%20of%20Minnesota%2C%20Minneapolis%2C%20MN%2055455!3m2!1d44.97399!2d-93.2277285!4m5!1s0x8096f09df58aecc5%3A0x2d249c2ced8003fe!2sYosemite%20National%20Park%2C%20California!3m2!1d37.8651011!2d-119.5383294!5e0!3m2!1sen!2sus!4v1669673491027!5m2!1sen!2sus",
     numdays: 0,
     cost: 250,
@@ -77,7 +77,7 @@ function createNewTrip(tripName, to, from) {
     dates: [],
     activityTypes: [],
     days: [],
-  }
+  })
 }
 
 /**
