@@ -6,6 +6,7 @@ import { Col, Row } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
+import { addBudget, getTrips } from '../trips/trips';
 
 function valueLabelFormat(value) {
   const units = ['USD'];
@@ -28,6 +29,12 @@ export default function Budget() {
       setValue(newValue);
     }
   };
+
+  const clickHandler = () => {
+    console.log(getTrips())
+    addBudget(value)
+    console.log(getTrips())
+  }
 
   return (
     <div className='BudgetScreen'>
@@ -60,8 +67,14 @@ export default function Budget() {
           </Box>
           <Row>
             <Col>
-              <Link to="/createtrip/travelers">
-                  <Button variant="outline-secondary" className='MainButton' id="back_travelers">Back</Button>{' '}
+              <Link to='/createtrip/travelers'>
+                <Button
+                  variant='outline-secondary'
+                  className='MainButton'
+                  id='back_travelers'
+                >
+                  Back
+                </Button>{' '}
               </Link>
             </Col>
             <Col>
@@ -70,6 +83,7 @@ export default function Budget() {
                   variant='outline-secondary'
                   className='MainButton'
                   id='to_activities'
+                  onClick={clickHandler}
                 >
                   Next
                 </Button>{' '}
