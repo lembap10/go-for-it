@@ -1,7 +1,4 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import { Col, Row, ProgressBar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import './../dropdown.css';
 
 const Icon = () => {
