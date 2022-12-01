@@ -9,13 +9,16 @@ import { addDates } from "../trips/trips.js"
 const DateScreen = () => {
   const clickHandler = () => {
     let date = document.getElementById("date").value
-    let from = date.substring(0, 10)
-    let to = date.substring(13, 23)
-    let fromMonth = from.substring(5, 7)
-    let fromDay = from.substring(8, 10)
-    let toMonth = to.substring(5, 7)
-    let toDay = to.substring(8, 10)
-    addDates(fromMonth, fromDay, toMonth, toDay)
+    console.log(date)
+    if (date != null){
+      let from = date.substring(0, 10)
+      let to = date.substring(13, 23)
+      let fromMonth = from.substring(5, 7)
+      let fromDay = from.substring(8, 10)
+      let toMonth = to.substring(5, 7)
+      let toDay = to.substring(8, 10)
+      addDates(fromMonth, fromDay, toMonth, toDay)
+    }
   }
   return (
     <div>

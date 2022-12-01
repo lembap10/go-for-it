@@ -108,6 +108,10 @@ function addDates(
   endDay,
   index = trips.length - 1
 ) {
+  startDay = parseInt(startDay)
+  startMonth = parseInt(startMonth)
+  endDay = parseInt(endDay)
+  endMonth = parseInt(endMonth)
   let months = [
     "",
     "January",
@@ -127,11 +131,12 @@ function addDates(
     `${months[startMonth]} ${startDay}th`,
     `${months[endMonth]} ${endDay}th`,
   ]
+  console.log(trips[index].dates)
   while (startMonth !== endMonth || startDay !== endDay) {
-    trips[index].dates += {
+    trips[index].days.push({
       day: `${months[startMonth]} ${startDay}th`,
-      activities: ["hard-code act 1", "hard-code act 2"],
-    }
+      activities: ["Coffee over there", "morning hike on sun trail"],
+    })
     startDay += 1
     if (startDay === 31) {
       startDay = 0

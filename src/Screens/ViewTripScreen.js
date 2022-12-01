@@ -3,7 +3,7 @@ import { Col, Row, Button, Container, Card } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import {useLocation} from 'react-router-dom';
 import Dropdown from '../Components/Dropdown.js'
-import './../ViewTripScreen.css'
+import './Screens-css/ViewTripScreen.css'
 import {getTrips, getCurScreen, changeCurScreen} from '../trips/trips.js'
 
 
@@ -48,28 +48,29 @@ function ViewTripScreen(){
                 <div className='tripInfo'>
                     <div className='tripOverview'>
                         <div className="costOverview">
-                            <p>Cost</p>
+                            <p className='infoHeader'>Cost</p>
                             <p>${trip.cost}</p>
                         </div>
                         {line}
                         <div className="attendeesOverview">
-                            <p>Attendees</p>
+                            <p className='infoHeader'>Attendees</p>
                             {trip.attendees.map( att => {
-                                return (<span classname="attendee">{att}</span>)
+                                return (<div><span classname="attendee">{att}</span><br></br></div>)
+                                
                             })}
                         </div>
                         {line}
                         <div className="datesOverview">
-                            <p>Dates</p>
+                            <p className='infoHeader'>Dates</p>
                             <span className='dates'>
                                 {trip.dates[0]} - {trip.dates[1]}
                             </span>
                         </div>
                         {line}
                         <div className="activityOverview">
-                            <p>Activity Types</p>
+                            <p className='infoHeader'>Activity Types</p>
                             {trip.activityTypes.map( act => {
-                                return (<span classname="attendee">{act}</span>)
+                                return (<div><span classname="attendee">{act}</span><br></br></div>)
                             })}
                         </div>
                     </div>
@@ -90,7 +91,7 @@ function ViewTripScreen(){
                 <Button variant="outline-secondary"> Back to Home </Button>
             </Link>
             <Link to="/createtrip/date">
-                <Button variant="outline-secondary" onClick="changeCurScreen(index)"> Edit this Trip </Button>
+                <Button variant="outline-secondary" onClick={changeCurScreen}> Edit this Trip </Button>
             </Link>
         </Container>
     )

@@ -16,6 +16,7 @@
 }
 
 .tripOverview{
+    padding-left:5px;
     width: 20%;
     border-right: 2px solid;
 }
@@ -23,9 +24,15 @@
 .dailyBreakdowns{
     border-right: 2px solid;
     padding-bottom: 10px;
-    width: 50%;
+    width: 45%;
 }
 
 .map{
     width: 50%;
+}
+
+.infoHeader{
+    color:black;
+    font-size: 17px;
+    font-weight:900;
 }
