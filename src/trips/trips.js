@@ -77,7 +77,7 @@ function createNewTrip(tripName, to, from) {
     dates: [],
     activityTypes: [],
     days: [],
-    emails : [],
+    emails: [],
   })
 }
 
@@ -108,6 +108,13 @@ function addDates(
   endDay,
   index = trips.length - 1
 ) {
+  if (
+    startMonth == undefined ||
+    startDay == undefined ||
+    endMonth == undefined ||
+    endDay == undefined
+  )
+    return
   startDay = parseInt(startDay)
   startMonth = parseInt(startMonth)
   endDay = parseInt(endDay)
@@ -216,10 +223,10 @@ function getCurScreen() {
   return curScreen
 }
 
-function getCurTrip(name){
-  for(var i = 0; i < trips.length; i++){
-    if (trips[i].name === name){
-      return trips[i];
+function getCurTrip(name) {
+  for (var i = 0; i < trips.length; i++) {
+    if (trips[i].name === name) {
+      return trips[i]
     }
   }
 }

@@ -1,27 +1,27 @@
-import * as React from 'react';
-import { Col, Row, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import Checkbox from '@mui/material/Checkbox';
-import Sidebar from '../Components/Sidebar';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormGroup from '@mui/material/FormGroup';
-import FormLabel from '@mui/material/FormLabel';
-import Box from '@mui/material/Box';
-import Slider from '@mui/material/Slider';
-import Typography from '@mui/material/Typography';
-import { getMap, getTrips, getDays } from '../trips/trips.js';
-import PropTypes from 'prop-types';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import ListSubheader from '@mui/material/ListSubheader';
-import IconButton from '@mui/material/IconButton';
-import Icon from '@mui/material/Icon';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import * as React from "react"
+import { Col, Row, Button } from "react-bootstrap"
+import { Link } from "react-router-dom"
+import Checkbox from "@mui/material/Checkbox"
+import Sidebar from "../Components/Sidebar"
+import Radio from "@mui/material/Radio"
+import RadioGroup from "@mui/material/RadioGroup"
+import FormControlLabel from "@mui/material/FormControlLabel"
+import FormControl from "@mui/material/FormControl"
+import FormGroup from "@mui/material/FormGroup"
+import FormLabel from "@mui/material/FormLabel"
+import Box from "@mui/material/Box"
+import Slider from "@mui/material/Slider"
+import Typography from "@mui/material/Typography"
+import { getMap, getTrips, getDays } from "../trips/trips.js"
+import PropTypes from "prop-types"
+import ImageList from "@mui/material/ImageList"
+import ImageListItem from "@mui/material/ImageListItem"
+import ImageListItemBar from "@mui/material/ImageListItemBar"
+import ListSubheader from "@mui/material/ListSubheader"
+import IconButton from "@mui/material/IconButton"
+import Icon from "@mui/material/Icon"
+import Tabs from "@mui/material/Tabs"
+import Tab from "@mui/material/Tab"
 
 // class Card extends React.Component {
 //   render() {
@@ -147,40 +147,40 @@ import Tab from '@mui/material/Tab';
 
 var teams = [
   {
-    title: 'November 25',
-    description: 'Minneapolis',
+    title: "November 25",
+    description: "Minneapolis",
   },
   {
-    title: 'November 26',
-    description: 'Duluth',
+    title: "November 26",
+    description: "Duluth",
   },
   {
-    title: 'November 27',
-    description: 'Duluth',
+    title: "November 27",
+    description: "Duluth",
   },
-];
+]
 
 var genres = [
   {
-    title: 'Aerial Lift Bridge',
-    description: 'Hiking',
+    title: "Aerial Lift Bridge",
+    description: "Hiking",
   },
   {
-    title: 'Canal Park',
-    description: 'Hiking',
+    title: "Canal Park",
+    description: "Hiking",
   },
   {
-    title: 'Spirit Mountain',
-    description: 'Nature',
+    title: "Spirit Mountain",
+    description: "Nature",
   },
   {
-    title: 'Great Lakes Aquarium',
-    description: 'Nature',
+    title: "Great Lakes Aquarium",
+    description: "Nature",
   },
-];
+]
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+  const { children, value, index, ...other } = props
 
   return (
     <div
@@ -196,63 +196,66 @@ function TabPanel(props) {
         </Box>
       )}
     </div>
-  );
+  )
 }
 
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
-};
+}
 
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
-  };
+    "aria-controls": `vertical-tabpanel-${index}`,
+  }
 }
 
 function valueLabelFormat(value) {
   //value for slider bar
 
-  const units = ['Hours'];
+  const units = ["Hours"]
 
-  let unitIndex = 0;
-  let scaledValue = value;
+  let unitIndex = 0
+  let scaledValue = value
 
-  return `${scaledValue} ${units[unitIndex]}`;
+  return `${scaledValue} ${units[unitIndex]}`
 }
 
 function calculateValue(value) {
-  return value;
+  return value
 }
 
 function EditScreen() {
-  const trips = getTrips();
-  const [tabvalue, setTabValue] = React.useState(0);
+  const trips = getTrips()
+  const [tabvalue, setTabValue] = React.useState(0)
 
   const handleTabChange = (event, newValue) => {
-    setTabValue(newValue);
-  };
+    setTabValue(newValue)
+  }
 
-  const [hourvalue, setHourValue] = React.useState(2);
+  const [hourvalue, setHourValue] = React.useState(2)
 
   const handleHourChange = (event, newValue) => {
-    if (typeof newValue === 'number') {
-      setHourValue(newValue);
+    if (typeof newValue === "number") {
+      setHourValue(newValue)
     }
-  };
+  }
 
-  const [value1, setValue1] = React.useState('Gas stops');
+  const [value1, setValue1] = React.useState("Gas stops")
 
   const handleChange1 = (event) => {
-    setValue1(event.target.value);
-  };
+    setValue1(event.target.value)
+  }
 
   return (
     <div className='InviteScreen'>
       <Row>
-        <Col xs={4} md='auto'>
+        <Col
+          xs={4}
+          md='auto'
+        >
           <Sidebar />
         </Col>
 
@@ -299,7 +302,10 @@ function EditScreen() {
                   </RadioGroup>
                 </FormControl>
                 <Box sx={{ width: 250 }}>
-                  <Typography id='non-linear-slider' gutterBottom>
+                  <Typography
+                    id='non-linear-slider'
+                    gutterBottom
+                  >
                     Hours: {valueLabelFormat(hourvalue)}
                   </Typography>
                   <Slider
@@ -321,9 +327,18 @@ function EditScreen() {
                     control={<Checkbox defaultChecked />}
                     label='Children'
                   />
-                  <FormControlLabel control={<Checkbox />} label='Elderly' />
-                  <FormControlLabel control={<Checkbox />} label='Disabled' />
-                  <FormControlLabel control={<Checkbox />} label='Pets' />
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label='Elderly'
+                  />
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label='Disabled'
+                  />
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label='Pets'
+                  />
                 </FormGroup>
               </Col>
 
@@ -342,7 +357,7 @@ function EditScreen() {
                 <Box
                   sx={{
                     maxWidth: { xs: 320, sm: 480 },
-                    bgcolor: 'background.paper',
+                    bgcolor: "background.paper",
                   }}
                 >
                   <Tabs
@@ -355,15 +370,21 @@ function EditScreen() {
                     <Tab label='November 26' />
                     <Tab label='Novermber 27' />
                     <Tab label='Novermber 28' />
-                  </Tabs>{' '}
-                  <TabPanel value={tabvalue} index={0}>
+                  </Tabs>{" "}
+                  <TabPanel
+                    value={tabvalue}
+                    index={0}
+                  >
                     {/* 1. Lost Creek Adventures<br></br>
                     Rafting/KayakingPaddleboardingVacation RentalsCornucopia
                     Open until 6:00 PM “a reservation online. On their website
                     it says if your 12 years old and 100lbs you are able to do
                     the half” more */}
                     <ImageList sx={{ width: 500, height: 450 }}>
-                      <ImageListItem key='Subheader' cols={2}>
+                      <ImageListItem
+                        key='Subheader'
+                        cols={2}
+                      >
                         <ListSubheader component='div'>
                           Activities
                         </ListSubheader>
@@ -381,7 +402,7 @@ function EditScreen() {
                             subtitle={item.author}
                             actionIcon={
                               <IconButton
-                                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                                sx={{ color: "rgba(255, 255, 255, 0.54)" }}
                                 aria-label={`info about ${item.title}`}
                               >
                                 <Icon>add_circle</Icon>
@@ -392,9 +413,15 @@ function EditScreen() {
                       ))}
                     </ImageList>
                   </TabPanel>
-                  <TabPanel value={tabvalue} index={1}>
+                  <TabPanel
+                    value={tabvalue}
+                    index={1}
+                  >
                     <ImageList sx={{ width: 500, height: 450 }}>
-                      <ImageListItem key='Subheader' cols={2}>
+                      <ImageListItem
+                        key='Subheader'
+                        cols={2}
+                      >
                         <ListSubheader component='div'>
                           Activities
                         </ListSubheader>
@@ -412,7 +439,7 @@ function EditScreen() {
                             subtitle={item.author}
                             actionIcon={
                               <IconButton
-                                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                                sx={{ color: "rgba(255, 255, 255, 0.54)" }}
                                 aria-label={`info about ${item.title}`}
                               >
                                 <Icon>add_circle</Icon>
@@ -423,9 +450,15 @@ function EditScreen() {
                       ))}
                     </ImageList>
                   </TabPanel>
-                  <TabPanel value={tabvalue} index={2}>
+                  <TabPanel
+                    value={tabvalue}
+                    index={2}
+                  >
                     <ImageList sx={{ width: 500, height: 450 }}>
-                      <ImageListItem key='Subheader' cols={2}>
+                      <ImageListItem
+                        key='Subheader'
+                        cols={2}
+                      >
                         <ListSubheader component='div'>
                           Activities
                         </ListSubheader>
@@ -443,7 +476,7 @@ function EditScreen() {
                             subtitle={item.author}
                             actionIcon={
                               <IconButton
-                                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                                sx={{ color: "rgba(255, 255, 255, 0.54)" }}
                                 aria-label={`info about ${item.title}`}
                               >
                                 <Icon>add_circle</Icon>
@@ -544,12 +577,17 @@ function EditScreen() {
                     id='back_vibes'
                   >
                     Back
-                  </Button>{' '}
+                  </Button>{" "}
                 </Link>
               </Col>
               <Col>
-                <Link to={'/createtrip/invite'}>
-                  <Button variant='outline-secondary'> Next </Button>
+                <Link to={"/createtrip/invite"}>
+                  <Button variant='outline-secondary'> Invite Others </Button>
+                </Link>
+              </Col>
+              <Col>
+                <Link to={"/savedtrips"}>
+                  <Button variant='outline-secondary'> Save this trip </Button>
                 </Link>
               </Col>
             </Row>
@@ -557,161 +595,161 @@ function EditScreen() {
         </Col>
       </Row>
     </div>
-  );
+  )
 }
 
-export default EditScreen;
+export default EditScreen
 
 const itemData = [
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'ZXC Breakfast',
-    author: 'Rest Stop',
+    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    title: "ZXC Breakfast",
+    author: "Rest Stop",
     rows: 2,
     cols: 2,
     featured: true,
   },
   {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'BCD Burger',
-    author: 'Rest Stop',
+    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    title: "BCD Burger",
+    author: "Rest Stop",
   },
   {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'ECF Camera Shop',
-    author: 'Attractions',
+    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
+    title: "ECF Camera Shop",
+    author: "Attractions",
   },
   {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'ABC Coffee',
-    author: 'Rest Stop',
+    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
+    title: "ABC Coffee",
+    author: "Rest Stop",
     cols: 2,
   },
   {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball Museum',
-    author: 'Attractions',
+    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
+    title: "Basketball Museum",
+    author: "Attractions",
   },
   {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike Trail',
-    author: 'Attractions',
+    img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
+    title: "Bike Trail",
+    author: "Attractions",
     cols: 2,
   },
   {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey Farm',
-    author: 'Rest Stop',
+    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
+    title: "Honey Farm",
+    author: "Rest Stop",
   },
-];
+]
 
 const itemData2 = [
   {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats Shop',
-    author: 'Attractions',
+    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
+    title: "Hats Shop",
+    author: "Attractions",
   },
   {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey Shop',
-    author: 'Attractions',
+    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
+    title: "Honey Shop",
+    author: "Attractions",
   },
   {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball Park',
-    author: 'Attractions',
+    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
+    title: "Basketball Park",
+    author: "Attractions",
   },
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'ZXC Breakfast',
-    author: 'Rest Stop',
+    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    title: "ZXC Breakfast",
+    author: "Rest Stop",
     rows: 2,
     cols: 2,
     featured: true,
   },
   {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'BCD Burger',
-    author: 'Rest Stop',
+    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    title: "BCD Burger",
+    author: "Rest Stop",
   },
   {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'ECF Camera Shop',
-    author: 'Attractions',
+    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
+    title: "ECF Camera Shop",
+    author: "Attractions",
   },
   {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'ABC Coffee',
-    author: 'Rest Stop',
+    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
+    title: "ABC Coffee",
+    author: "Rest Stop",
     cols: 2,
   },
   {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball Museum',
-    author: 'Attractions',
+    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
+    title: "Basketball Museum",
+    author: "Attractions",
   },
   {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike Trail',
-    author: 'Attractions',
+    img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
+    title: "Bike Trail",
+    author: "Attractions",
     cols: 2,
   },
-];
+]
 
 const itemData3 = [
   {
-    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern Park',
-    author: 'Attractions',
+    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
+    title: "Fern Park",
+    author: "Attractions",
   },
   {
-    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms Shop',
-    author: 'Attractions',
+    img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
+    title: "Mushrooms Shop",
+    author: "Attractions",
   },
   {
-    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil Farm',
-    author: 'Rest Stop',
+    img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
+    title: "Tomato basil Farm",
+    author: "Rest Stop",
   },
   {
-    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star Beach',
-    author: 'Attractions',
+    img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
+    title: "Sea star Beach",
+    author: "Attractions",
   },
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'ZXC Breakfast',
-    author: 'Rest Stop',
+    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    title: "ZXC Breakfast",
+    author: "Rest Stop",
     rows: 2,
     cols: 2,
     featured: true,
   },
   {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'BCD Burger',
-    author: 'Rest Stop',
+    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    title: "BCD Burger",
+    author: "Rest Stop",
   },
   {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'ECF Camera Shop',
-    author: 'Attractions',
+    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
+    title: "ECF Camera Shop",
+    author: "Attractions",
   },
   {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'ABC Coffee',
-    author: 'Rest Stop',
+    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
+    title: "ABC Coffee",
+    author: "Rest Stop",
     cols: 2,
   },
   {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball Museum',
-    author: 'Attractions',
+    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
+    title: "Basketball Museum",
+    author: "Attractions",
   },
   {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike Trail',
-    author: 'Attractions',
+    img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
+    title: "Bike Trail",
+    author: "Attractions",
     cols: 2,
   },
-];
+]
