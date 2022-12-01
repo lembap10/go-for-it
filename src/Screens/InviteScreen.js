@@ -17,12 +17,20 @@ function InviteScreen() {
     let emailOne = document.getElementById("emailOne").value
     let emailTwo = document.getElementById("emailTwo").value
     let emailThree = document.getElementById("emailThree").value
-
+    
+    let count = 3
     let emailList = [emailOne, emailTwo, emailThree]
+    let filterList = emailList.filter(element => {
+      return element !== ''
+    })
+
+
+    console.log(filterList)
+    //let emailList = emailList.append()[emailOne, emailTwo, emailThree]
 
     console.log(emailOne, emailTwo, emailThree)
     console.log(emailList)
-    addEmails(emailList)
+    addEmails(filterList)
     
     console.log(getEmails())
     //console.log(Object.values(emails));
