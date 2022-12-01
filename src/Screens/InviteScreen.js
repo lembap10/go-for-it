@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Row, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { addEmails } from '../trips/trips.js';
+import { addEmails, getEmails, getTripNames, getTrips } from '../trips/trips.js';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Sidebar from '../Components/Sidebar';
@@ -14,8 +14,19 @@ function InviteScreen() {
 };
 
   const handleSend = () => {
-    console.log(Object.values(emails))
-    addEmails(Object.values(emails));
+    let emailOne = document.getElementById("emailOne").value
+    let emailTwo = document.getElementById("emailTwo").value
+    let emailThree = document.getElementById("emailThree").value
+
+    let emailList = [emailOne, emailTwo, emailThree]
+
+    console.log(emailOne, emailTwo, emailThree)
+    console.log(emailList)
+    addEmails(emailList)
+    
+    console.log(getEmails())
+    //console.log(Object.values(emails));
+    
 };
 
   return (
@@ -33,26 +44,29 @@ function InviteScreen() {
 
           <Row>
             <Col>
-              <FloatingLabel controlId='floatingInput' label='Email' onChange={handleEmails}>
+              <FloatingLabel label='Email' value ={emails} onChange={handleEmails}>
                 <Form.Control
-                  type='Email Invite'
-                  placeholder='example@gmail.com'
+                  type='text'
+                  placeholder='Email'
+                  id ='emailOne'
                 />
               </FloatingLabel>
             </Col>
             <Col>
-              <FloatingLabel controlId='floatingInput' label='Email' onChange={handleEmails}>
+              <FloatingLabel label='Email' value ={emails} onChange={handleEmails}>
                 <Form.Control
-                  type='Email Invite'
-                  placeholder='example@gmail.com'
+                  type='text'
+                  placeholder='Email'
+                  id ='emailTwo'
                 />
               </FloatingLabel>
             </Col>
             <Col>
-              <FloatingLabel controlId='floatingInput' label='Email' onChange={handleEmails}>
+              <FloatingLabel label='Email' value ={emails} onChange={handleEmails}>
                 <Form.Control
-                  type='Email Invite'
-                  placeholder='example@gmail.com'
+                  type='text'
+                  placeholder='Email'
+                  id = 'emailThree'
                 />
               </FloatingLabel>
             </Col>

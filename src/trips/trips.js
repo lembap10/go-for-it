@@ -77,6 +77,7 @@ function createNewTrip(tripName, to, from) {
     dates: [],
     activityTypes: [],
     days: [],
+    emails : [],
   })
 }
 

@@ -12,6 +12,7 @@ function CreateTripScreen() {
     let to = document.getElementById("to").value
     let name = document.getElementById("tripName").value
     createNewTrip(name, to, from)
+    console.log(name, to, from)
   }
 
   return (
