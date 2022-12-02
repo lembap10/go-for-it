@@ -18,6 +18,12 @@ const DateScreen = () => {
       let toMonth = to.substring(5, 7)
       let toDay = to.substring(8, 10)
       addDates(fromMonth, fromDay, toMonth, toDay)
+    } else {
+      let today = new Date()
+      let day = today.getDate()
+      let month = today.getMonth() + 1
+      console.log(day + month)
+      addDates(month, day, month, day)
     }
   }
   return (
