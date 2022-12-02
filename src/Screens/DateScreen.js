@@ -10,7 +10,7 @@ const DateScreen = () => {
   const clickHandler = () => {
     let date = document.getElementById("date").value
     console.log(date)
-    if (date != null){
+    if (date != "") {
       let from = date.substring(0, 10)
       let to = date.substring(13, 23)
       let fromMonth = from.substring(5, 7)

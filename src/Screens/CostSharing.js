@@ -101,7 +101,7 @@ function CostSharingScreen(){
                     </Col>
                     <Col>
                         <Link to="/">
-                            <Button variant="outline-secondary"> Next </Button>
+                            <Button variant="outline-secondary"> Finish </Button>
                         </Link>
                     </Col>
                 </Row>

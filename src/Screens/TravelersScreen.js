@@ -6,7 +6,6 @@ import { Link } from "react-router-dom"
 import { addAttendees, getTrips } from "../trips/trips"
 
 export default function Travelers() {
-  console.log(getTrips())
   let [count1, setCount1] = useState(0)
   let [count2, setCount2] = useState(0)
   let [count3, setCount3] = useState(0)
@@ -44,7 +43,6 @@ export default function Travelers() {
   }
 
   const clickHandler = () => {
-    console.log(getTrips())
     addAttendees(count1, count2, count3)
     console.log(getTrips())
   }

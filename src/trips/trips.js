@@ -108,17 +108,6 @@ function addDates(
   endDay,
   index = trips.length - 1
 ) {
-  if (
-    startMonth == undefined ||
-    startDay == undefined ||
-    endMonth == undefined ||
-    endDay == undefined
-  )
-    return
-  startDay = parseInt(startDay)
-  startMonth = parseInt(startMonth)
-  endDay = parseInt(endDay)
-  endMonth = parseInt(endMonth)
   let months = [
     "",
     "January",
@@ -134,6 +123,24 @@ function addDates(
     "November",
     "December",
   ]
+  // if (
+  //   startMonth === undefined &&
+  //   startDay === undefined &&
+  //   endMonth === undefined &&
+  //   endDay === undefined
+  // ) {
+  // let today = new Date()
+  // let month = today.getMonth() + 1
+  // let day = today.getDate()
+  // trips[index].dates = [
+  //   `${months[month]} ${day}th`,
+  //   `${months[month]} ${day}th`,
+  // ]
+  startDay = parseInt(startDay)
+  startMonth = parseInt(startMonth)
+  endDay = parseInt(endDay)
+  endMonth = parseInt(endMonth)
+
   trips[index].dates = [
     `${months[startMonth]} ${startDay}th`,
     `${months[endMonth]} ${endDay}th`,
