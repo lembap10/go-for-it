@@ -1,0 +1,10 @@
+main{
+    min-height: 80vh;
+    display: flex;
+}
+
+Button {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,38 @@
+.ViewTripScreen{
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.titleheader {
+    width: 100%;
+    padding: 10px;
+    padding-top: 20px;
+    margin-left: 30px;
+}
+
+.tripInfo{
+    display: flex;
+    border-top: 2px solid black;
+}
+
+.tripOverview{
+    padding-left:5px;
+    width: 20%;
+    border-right: 2px solid;
+}
+
+.dailyBreakdowns{
+    border-right: 2px solid;
+    padding-bottom: 10px;
+    width: 45%;
+}
+
+.map{
+    width: 50%;
+}
+
+.infoHeader{
+    color:black;
+    font-size: 17px;
+    font-weight:900;
+}

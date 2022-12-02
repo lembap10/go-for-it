@@ -1,0 +1,48 @@
+import React from 'react';
+import {
+  CDBSidebar,
+  CDBSidebarContent,
+  CDBSidebarHeader,
+  CDBSidebarMenu,
+  CDBSidebarMenuItem,
+} from 'cdbreact';
+import { NavLink } from 'react-router-dom';
+
+const Sidebar = () => {
+  return (
+    <div style={{ display: 'flex', height: '80vh', overflow: 'scroll initial', margin: 0 }}>
+      <CDBSidebar textColor="#fff" backgroundColor="#333">
+        <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
+          <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
+            GoForIt
+          </a>
+        </CDBSidebarHeader>
+
+        <CDBSidebarContent className="sidebar-content">
+          <CDBSidebarMenu>
+            <NavLink exact to="/createtrip/date" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="calendar">Dates</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/createtrip/travelers" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="plus">Travelers</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/createtrip/budget" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="dollar-sign">Budget</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/createtrip/activities" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="mountain">Activities</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/createtrip/vibes" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="star">Vibe</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/createtrip/invite" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="share">Invite</CDBSidebarMenuItem>
+            </NavLink>
+          </CDBSidebarMenu>
+        </CDBSidebarContent>
+      </CDBSidebar>
+    </div>
+  );
+};
+
+export default Sidebar;
